@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist One Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mike Boissoneault</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/comment_section.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -31,6 +32,8 @@
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="login_page.html">Login</a></li>
+                <li><a href="sign_up_page.html">Sign up</a></li>
             </ul>
         </div>
     </nav>
@@ -40,6 +43,7 @@
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
             <li><a href="3d-tattoo-gallery.html" class="style-item">3D Tattoo Style</a></li>
+            <li><a href="artist1-profile.html" class="style-item">Mike B</a></li>
             <li><a href="Example 2" class="style-item">Example 2</a></li>
             <li><a href="Example 3" class="style-item">Example 3</a></li>
         </ul>
@@ -52,15 +56,15 @@
             <section class="artist-gallery">
                 <h2>Gallery</h2>
                 <div class="artist-work">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-03-07+at+1.14.46+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-03-07+at+1.15.37+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-03-07+at+1.19.49+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-07-05+at+3.46.18+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-07-05+at+3.46.27+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2019-07-05+at+3.46.33+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screen+Shot+2023-06-16+at+2.24.42+PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screenshot+2024-09-14+at+3.28.41 PM.png">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\Screenshot+2024-09-14+at+3.29.24 PM.png">
+                    <img src="Mike B\Screen+Shot+2019-03-07+at+1.14.46+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-03-07+at+1.15.37+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-03-07+at+1.19.49+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-07-05+at+3.46.18+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-07-05+at+3.46.27+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-07-05+at+3.46.33+PM.png">
+                    <img src="Mike B\Screen+Shot+2023-06-16+at+2.24.42+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-03-07+at+1.15.11+PM.png">
+                    <img src="Mike B\Screen+Shot+2019-03-07+at+1.15.26+PM.png">
                     <!-- Add more artworks as needed -->
                 </div>
             </section>
@@ -98,21 +102,128 @@
                 </form>
             </section>
         </div>
-        <section class="artist-reviews">
-            <h2>Reviews</h2>
-            <div class="review">
-                <h3>John Doe</h3>
-                <p>Amazing artist! Loved the work. Highly recommended!</p>
-                <span>⭐⭐⭐⭐⭐</span>
+        <section class="comment">
+            <div class="comment-section">
+                <h2>Comments</h2>
+                <form id="comment-form">
+                    <input type="text" id="comment-name" placeholder="Your Name" required>
+                    <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
+                    <div class="star-rating" id="star-rating">
+                        <span class="star" data-rating="1">&#9733;</span>
+                        <span class="star" data-rating="2">&#9733;</span>
+                        <span class="star" data-rating="3">&#9733;</span>
+                        <span class="star" data-rating="4">&#9733;</span>
+                        <span class="star" data-rating="5">&#9733;</span>
+                    </div>
+                    <button type="submit">Add Comment</button>
+                </form>
+                <ul id="comment-list"></ul>
             </div>
-            <div class="review">
-                <h3>Jane Smith</h3>
-                <p>Very professional and talented. Will come back for more tattoos!</p>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <!-- Add more reviews as needed -->
+            </form>
+            <ul id="comment-list" class="comment-list"></ul>
+        </section>
+            
         </section>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comment-list');
+            const starRating = document.getElementById('star-rating');
+            let currentRating = 0;
+            let comments = [];
+            let editingId = null;
+
+            starRating.addEventListener('click', function(e) {
+                if (e.target.classList.contains('star')) {
+                    currentRating = parseInt(e.target.getAttribute('data-rating'));
+                    updateStars(currentRating, starRating);
+                }
+            });
+
+            function updateStars(rating, container) {
+                const stars = container.querySelectorAll('.star');
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const commentName = document.getElementById('comment-name').value.trim();
+                const commentText = document.getElementById('comment-text').value.trim();
+                if (commentName && commentText && currentRating > 0) {
+                    if (editingId !== null) {
+                        const commentIndex = comments.findIndex(c => c.id === editingId);
+                        comments[commentIndex].name = commentName;
+                        comments[commentIndex].text = commentText;
+                        comments[commentIndex].rating = currentRating;
+                        editingId = null;
+                    } else {
+                        const newComment = {
+                            id: Date.now(),
+                            name: commentName,
+                            text: commentText,
+                            rating: currentRating
+                        };
+                        comments.push(newComment);
+                    }
+                    renderComments();
+                    commentForm.reset();
+                    currentRating = 0;
+                    updateStars(currentRating, starRating);
+                }
+            });
+
+            function renderComments() {
+                commentList.innerHTML = '';
+                comments.forEach(comment => {
+                    const li = document.createElement('li');
+                    const starRatingDiv = document.createElement('div');
+                    starRatingDiv.className = 'star-rating';
+                    for (let i = 1; i <= 5; i++) {
+                        const star = document.createElement('span');
+                        star.className = 'star' + (i <= comment.rating ? ' active' : '');
+                        star.textContent = '★';
+                        starRatingDiv.appendChild(star);
+                    }
+                    li.innerHTML = `
+                        <div class="comment-author">${comment.name}</div>
+                        <p>${comment.text}</p>
+                    `;
+                    li.appendChild(starRatingDiv);
+                    li.innerHTML += `
+                        <div class="comment-actions">
+                            <button onclick="editComment(${comment.id})">Edit</button>
+                            <button onclick="deleteComment(${comment.id})">Delete</button>
+                        </div>
+                    `;
+                    commentList.appendChild(li);
+                });
+            }
+
+            window.editComment = function(id) {
+                const comment = comments.find(c => c.id === id);
+                if (comment) {
+                    document.getElementById('comment-name').value = comment.name;
+                    document.getElementById('comment-text').value = comment.text;
+                    currentRating = comment.rating;
+                    updateStars(currentRating, starRating);
+                    editingId = id;
+                }
+            };
+
+            window.deleteComment = function(id) {
+                comments = comments.filter(c => c.id !== id);
+                renderComments();
+            };
+        });
+    </script>
 </body>
 </html>
 
