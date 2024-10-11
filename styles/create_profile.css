@@ -1,0 +1,235 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --accent-color: #FFA500;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.create-profile-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.create-profile-btn:hover {
+    background-color: #FF8C00;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 4px solid var(--accent-color);
+}
+
+.profile-info {
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.name {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+    color: var(--accent-color);
+}
+
+.job-title {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin: 0 0 20px;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.section {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.editable:hover {
+    background-color: rgba(255, 165, 0, 0.1);
+    outline: 2px dashed var(--accent-color);
+}
+
+.editable:focus {
+    background-color: rgba(255, 165, 0, 0.2);
+    outline: 2px solid var(--accent-color);
+}
+
+#upload-gallery-pics, #add-social, button[type="submit"] {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#upload-gallery-pics:hover, #add-social:hover, button[type="submit"]:hover {
+    background-color: #FF8C00;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+    .gallery-images {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .gallery-image {
+        height: 250px;
+    }
+}
+
+#upload-tattoo {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+#upload-tattoo:hover {
+    background-color: #FF8C00;
+}
+
+#social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.social-link:hover {
+    background-color: #FF8C00;
+}
+
+.artist-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.artist-info li {
+    margin-bottom: 10px;
+}
+
+.social-link-input {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.social-link-input input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+}
+
+.social-link-input button {
+    margin-right: 10px;
+}
