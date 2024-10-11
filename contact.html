@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Tattoo Hub</title>
+    <title>Tattoo Hub</title>
     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="functions/contact.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Contact Us</h1>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">Tattoo Hub</a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Customer Support</a></li>
+                <li><a href="login_page.html">Login</a></li>
+                <li><a href="sign_up_page.html">Sign Up</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
         </div>
-    </header>
-        </div>
+    </nav>
     <div class="container">
         <div class="contact-info">
             <h2>Customer Service</h2>
@@ -27,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="subject">Subject:</label>

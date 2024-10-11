@@ -1,3 +1,4 @@
+/* styles.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -48,16 +49,22 @@ body {
     font-size: 1em;
 }
 
+.navbar-menu a:hover {
+    color: #ff6347; /* Highlight color */
+}
+
 .home-page {
     text-align: center;
     padding: 100px 20px 20px; /* Adjusted padding to account for fixed navbar */
 }
 
 .header {
+    align-self: center;
     background-color: #f8f8f8;
-    padding: 50px 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    padding: 50px 10px;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -355,3 +362,51 @@ body {
 .artist-info a:hover {
     text-decoration: underline;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #ff6347;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
