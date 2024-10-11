@@ -20,42 +20,41 @@
             </ul>
         </div>
     </nav>
-    <div class="sidebar">
-        <h2>Search by Style</h2>
-        <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
-        <div id="recommendationContainer" class="recommendation-container"></div>
-        <ul class="style-list" id="styleList">
-            <li><a href="3d-tattoo-gallery.html" class="style-item">Asian</a></li>
-            <li><a href="Example 2" class="style-item">Line Work</a></li>
-            <li><a href="Example 3" class="style-item">Traditional</a></li>
-        </ul>
-    </div>
-    <div class="home-page">
-        <header class="header">
-            <h1>Find the best tattoo artists in New England</h1>
-            <input type="text" placeholder="Search by location or style" class="search-bar">
-        </header>
-        <section class="featured-artists">
-            <h2>Featured Artists</h2>
-            <div class="artist-list">
-                <div class="artist-card">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="artist1-profile.html">Mike Boissoneault</a></h3>
-                    <p>Asian</p>
+    <br><br><br><br>
+    <div class="container">
+        <h1 id="instructions">Please enter the requested information to create account.</h1>
+        <form action="/action_page.php">
+            <section id="contact" class="container">
+                <div style="text-align:center">
                 </div>
-                <div class="artist-card">
-                    <img src="c:\Users\Huang\Desktop\Tattoo Website\Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="C:\Users\Huang\Desktop\Tattoo Website\Bill-Lee-Profile.html">Bill Le</a></h3>
-                    <p>Modern</p>
-                </div>
-                <div class="artist-card">
-                    <img src="path/to/image3.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Artist Three</h3>
-                    <p>Realism</p>
-                </div>
-            </div>
-        </section>
-        <div id="galleryContainer" class="gallery-container"></div>
+                  <div class="fields">
+                    <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter username" name="uname" required>
+                    </div>
+                    <div class="fields">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="text" placeholder="Enter password" name="psw" required>
+                    </div>
+                    <div>
+                        <label for="re-psw"><b>Re-enter Password</b></label>
+                        <input type="text" placeholder="Re-enter password" name="re-psw" required>
+                    </div>
+                    <p>Please select whether you are a client or an artist:</p>
+                    <label for="client">Client</label>
+                    <input type="radio" name="user_type" id="client" value="Client">
+                    <label for="artist">Artist</label>
+                    <input type="radio" name="user_type" id="artist" value="Artist">
+                    <br>
+                    <input type="submit" value="Create Account" id="submit"
+                </section>
+        </form>
     </div>
 </body>
 </html>
+
