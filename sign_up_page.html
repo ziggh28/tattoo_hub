@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sign up</title>
-        <link rel="stylesheet" href="styles/sign_up.css">
-        <script src="scripts.js" defer></script>
-    </head>
-    <body>
-        <header></header>
-        <div class="container">
-            <h1 id="instructions">Please enter the requested information to create account.</h1>
-            <form action="/action_page.php">
-                <div class="fields">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter username" name="uname" required>
-                </div>
-                <br>
-                <div class="fields">
-                    <label for="email"><b>Email</b></label>
-                    <input type="email" placeholder="Enter email" name="email" required>
-                </div>
-                <br>
-                <div>
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter password" name="psw" required>
-                </div>
-                <br>
-                <div>
-                    <label for="re-psw"><b>Re-enter Password</b></label>
-                    <input type="password" placeholder="Re-enter password" name="re-psw" required>
-                </div>
-                <br>
-                <p>Please select whether you are a client or an artist:</p>
-                <label for="client">Client</label>
-                <input type="radio" name="user_type" id="client" value="Client">
-                <label for="artist">Artist</label>
-                <input type="radio" name="user_type" id="artist" value="Artist">
-                <br>
-                <input type="submit" value="Create Account" id="submit">
-            </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">Tattoo Hub</a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Customer Support</a></li>
+                <li><a href="login_page.html">Login</a></li>
+                <li><a href="sign_up_page.html">Sign Up</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
         </div>
-    </body>
+    </nav>
+    <br><br><br><br>
+    <div class="container">
+        <h1 id="instructions">Please enter the requested information to create account.</h1>
+        <form action="/action_page.php">
+            <section id="contact" class="container">
+                <div style="text-align:center">
+                </div>
+                  <div class="fields">
+                    <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter username" name="uname" required>
+                    </div>
+                    <div class="fields">
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="text" placeholder="Enter password" name="psw" required>
+                    </div>
+                    <div>
+                        <label for="re-psw"><b>Re-enter Password</b></label>
+                        <input type="text" placeholder="Re-enter password" name="re-psw" required>
+                    </div>
+                    <p>Please select whether you are a client or an artist:</p>
+                    <label for="client">Client</label>
+                    <input type="radio" name="user_type" id="client" value="Client">
+                    <label for="artist">Artist</label>
+                    <input type="radio" name="user_type" id="artist" value="Artist">
+                    <br>
+                    <input type="submit" value="Create Account" id="submit"
+                </section>
+        </form>
+    </div>
+</body>
 </html>
