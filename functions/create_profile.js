@@ -171,9 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Save on edit
-    document.addEventListener('input', (event) => {
-        if (event.target.classList.contains('editable')) {
+    document.addEventListener('input', (e) => {
+        if (e.target.classList.contains('editable')) {
             saveToLocalStorage();
         }
+    
     });
 });
