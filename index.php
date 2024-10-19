@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,18 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">Tattoo Hub</a>
+            <a href="index.php" class="navbar-logo">Tattoo Hub</a>
+            <?php
+                if(isset($_SESSION['name'])) {
+                    echo "Hello  " . $_SESSION['name'];
+                }
+            ?>
             <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Customer Support</a></li>
-                <li><a href="login_page.html">Login</a></li>
-                <li><a href="sign_up_page.html">Sign Up</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="contact.php">Customer Support</a></li>
+                <li><a href="login_page.php">Login</a></li>
+                <li><a href="sign_up_page.php">Sign Up</a></li>
+                <li><a href="logout.php">Log Out</a>
                 <li><a href="#">Profile</a></li>
             </ul>
         </div>
@@ -25,7 +32,7 @@
         <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
-            <li><a href="3d-tattoo-gallery.html" class="style-item">Asian</a></li>
+            <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
             <li><a href="Example 2" class="style-item">Line Work</a></li>
             <li><a href="Example 3" class="style-item">Traditional</a></li>
         </ul>
@@ -40,12 +47,12 @@
             <div class="artist-list">
                 <div class="artist-card">
                     <img src="Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="artist1-profile.html">Mike Boissoneault</a></h3>
+                    <h3><a href="Mike-Boissoneault-Profile.php">Mike Boissoneault</a></h3>
                     <p>Asian</p>
                 </div>
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="Bill-Lee-Profile.html">Bill Le</a></h3>
+                    <h3><a href="Bill-Lee-Profile.php">Bill Le</a></h3>
                     <p>Modern</p>
                 </div>
                 <div class="artist-card">

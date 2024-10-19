@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +12,18 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">Tattoo Hub</a>
+            <a href="index.php" class="navbar-logo">Tattoo Hub</a>
+            <?php
+                    if(isset($_SESSION['name'])) {
+                        echo "Hello  " . $_SESSION['name'];
+                    }
+                ?>
             <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Customer Support</a></li>
-                <li><a href="login_page.html">Login</a></li>
-                <li><a href="sign_up_page.html">Sign Up</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="contact.php">Customer Support</a></li>
+                <li><a href="login_page.php">Login</a></li>
+                <li><a href="sign_up_page.php">Sign Up</a></li>
+                <li><a href="logout.php">Log Out</a>
                 <li><a href="#">Profile</a></li>
             </ul>
         </div>
