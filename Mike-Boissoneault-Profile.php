@@ -116,6 +116,17 @@
                         <div class="comment-section">
                             <h2>Comments</h2>
                             <form id="comment-form">
+                                <?php
+                                    if(!isset($_SESSION['name'])){
+                                        echo "Please make an account or sign in to submit comments.";
+                                    } else{
+                                        echo "Hello " . $_SESSION['name']. " feel free to leave a comment about your experience!";
+                                    }
+                                ?>
+
+                                    
+                                
+                                <form id="comment-form">
                                 <input type="text" id="comment-name" placeholder="Your Name" required>
                                 <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
                                 <div class="star-rating" id="star-rating">
