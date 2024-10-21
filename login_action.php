@@ -1,10 +1,10 @@
 <?php
-include ("connection.php");
+include "connection.php";
 
 session_start();
-if(isset($_SESSION['name'])) {
+/*if(isset($_SESSION['name'])) {
     header("Location: index.php");
-}
+}*/
 
 if(isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($conn,$_POST['username']);
@@ -21,16 +21,11 @@ if(isset($_POST['submit'])) {
             session_start();
             $_SESSION['name'] = $result['username'];
             header("Location: welcome_back.php");
-        }
+        }      
     }
-    else{
+    else
         echo '<script>
-                alert("Invalid username/email or password! Please try again.
-                window.location.href
-              </script>';
-                
-        }
+                window.location.href="login_page.php";
+                alert("Invalid username/email or password! Please try again.");
+            </script>'; 
 }
-
-
-?>

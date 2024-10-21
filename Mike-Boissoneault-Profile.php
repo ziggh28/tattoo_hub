@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    date_default_timezone_set('America/New_York');
+    include 'comments.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,33 +119,21 @@
                     <section class="comment">
                         <div class="comment-section">
                             <h2>Comments</h2>
-                            <form id="comment-form">
                                 <?php
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit comments.";
                                     } else{
-                                        echo "Hello " . $_SESSION['name']. " feel free to leave a comment about your experience!";
+                                        echo "Hello ".$_SESSION['name'] ." feel free to leave a comment about your experience!
+                                        <form id='comment-form' method='POST' action='".setComments()."'>
+                                        <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
+                                        <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
+                                        <textarea name='message' placeholder='Write your comment here'></textarea>
+                                        <button type='submit' name='commentSubmit'>Add Comment</button>
+                                        </form>";
                                     }
-                                ?>
-
-                                    
-                                
-                                <form id="comment-form">
-                                <input type="text" id="comment-name" placeholder="Your Name" required>
-                                <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
-                                <div class="star-rating" id="star-rating">
-                                    <span class="star" data-rating="1">&#9733;</span>
-                                    <span class="star" data-rating="2">&#9733;</span>
-                                    <span class="star" data-rating="3">&#9733;</span>
-                                    <span class="star" data-rating="4">&#9733;</span>
-                                    <span class="star" data-rating="5">&#9733;</span>
-                                </div>
-                                <button type="submit">Add Comment</button>
-                            </form>
-                            <ul id="comment-list"></ul>
+                                    getComments();
+                                ?>    
                         </div>
-                        </form>
-                        <ul id="comment-list" class="comment-list"></ul>
                     </section>
                         
                     </section>
