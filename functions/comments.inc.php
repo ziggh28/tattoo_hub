@@ -5,10 +5,10 @@ function setComments(){
 if (isset($_POST['commentSubmit'])){
         global $conn;
         $id = $_POST["id"];
-        $rating = $_POST["rating"];
+        $ratings = $_POST["ratings"];
         $date = $_POST["date"];
         $message = $_POST['message'];
-        $sql = "INSERT INTO comment_section(id, date, message) VALUES('$id', '$date', '$message')";
+        $sql = "INSERT INTO comment_section(id, date, ratings,message) VALUES('$id', '$date', '$ratings', '$message')";
         $result = mysqli_query($conn, $sql);
     }
 }
@@ -20,7 +20,7 @@ function getComments() {
     while ($row = $result->fetch_assoc()) {
         echo "<div id='comment-box'>";
             echo "user: ".$row['id']. "<br>";
-            echo "rating: ".$row['rating']. "<br>";
+            echo "rating: ".$row['ratings']. "<br>";
             echo "date: ".$row['date']. "<br>";
             echo "message: ".$row['message']. "<br><br>";
         echo "</div>";
