@@ -1,7 +1,7 @@
 <?php 
     session_start();
     date_default_timezone_set('America/New_York');
-    include 'comments.inc.php';
+    include 'functions/comments.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +11,8 @@
     <title>Mike Boissoneault Profile</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts.js" defer></script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    <script type="text/javascript"></script>
+    <script>src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"</script>
 </script>
 <script type="text/javascript">
 (function(){
@@ -118,15 +118,27 @@
                     </div>
                     <section class="comment">
                         <div class="comment-section">
-                            <h2>Comments</h2>
+                            <h2>Comments/Reviews</h2>
                                 <?php
                                     if(!isset($_SESSION['name'])){
-                                        echo "Please make an account or sign in to submit comments.";
+                                        echo "Please make an account or sign in to submit comments/reviews.";
                                     } else{
                                         echo "Hello ".$_SESSION['name'] ." feel free to leave a comment about your experience!
                                         <form id='comment-form' method='POST' action='".setComments()."'>
                                         <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
                                         <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
+                                        <fieldset class='rating'>
+                                            <input type='radio' id='star5' name='ratings' value='5'>
+                                            <label for='star5' class='full'></label>
+                                            <input type='radio' id='star4' name='ratings' value='4'>
+                                            <label for='star4' class='full'></label>
+                                            <input type='radio' id='star3' name='ratings' value='3'>
+                                            <label for='star3' class='full'></label>
+                                            <input type='radio' id='star2' name='ratings' value='2'>
+                                            <label for='star2' class='full'></label>
+                                            <input type='radio' id='star1' name='ratings' value='1'>
+                                            <label for='star1' class='full'></label>
+                                        </fieldset>      
                                         <textarea name='message' placeholder='Write your comment here'></textarea>
                                         <button type='submit' name='commentSubmit'>Add Comment</button>
                                         </form>";
@@ -139,6 +151,6 @@
                     </section>
                 </div>
             
-                <script src="/functions/comment.js"></script>
+                <!--<script src="/functions/star-rating.js"></script>-->
             </body>
             </html>
