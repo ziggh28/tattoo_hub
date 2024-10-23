@@ -100,7 +100,7 @@
                                   <label for="message">Time/Date of appointment and what would you like done</label>
                                   <textarea id="message" name="message" placeholder="Time/date and Idea" style="height:170px" required></textarea>
                                 </div> 
-                                  <button type="submit" onclick="sendMail()">Send</button>
+                                   <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
                                 </form>
                             </form>
                         </section>

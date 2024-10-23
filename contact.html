@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tattoo Hub</title>
-    <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="functions/contact.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jscustomersupport.js" defer></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "HE1JjwRQAsDoZudBU",
+  });
+})();
+</script>
+<script src="jscustomersupport.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -21,43 +31,44 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="contact-info">
+    <header>
+        <div class="container">
+            <br>
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+    <section id="contact" class="container">
+        <div style="text-align:center">
             <h2>Customer Service</h2>
             <p>Phone: 888-888-8888</p>
             <p>Email: customerservice@tattoohub.com</p>
         </div>
-
-        <form id="contact-form" class="contact-form">
+          <div class="column">
+            <form action="/action_page.php">
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name.." required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+              <label for="email">Your email</label>
+              <input type="text" id="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="form-group"></div>
+              <label for="pnumber">Phone Number</label>
+              <input type="text" id="pnumber" name="pnumber" placeholder="Your phone number" required>
             </div>
             <div class="form-group">
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject" required>
-                    <option value="">Select an issue</option>
-                    <option value="Business Inquiry">Business Inquiry</option>
-                    <option value="Pricing">Pricing</option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Advertisement">Advertisement</option>
-                    <option value="Partnership">Partnership</option>
-                    <option value="General Question">General Question</option>
-                    <option value="Other">Other</option>
-                </select>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="request booking/question" required>
             </div>
             <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message-text" name="message" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="message"></div>
-    </div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Time/date and Idea" style="height:170px" required></textarea>
+            </div> 
+              <button type="submit event.preventDefault();" onclick="sendMail()">Send</button>
+    </section>
+</form>
+</section>
 
     <script src="/functions/commment.js"></script>
 </body>
