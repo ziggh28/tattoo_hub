@@ -168,20 +168,20 @@ body {
     cursor: pointer;
 }
 
-.booking-form {
+form {
     display: flex;
     flex-direction: column;
 }
 
-.booking-form input,
-.booking-form textarea {
+form input,
+form textarea {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.25rem;
 }
 
-.booking-form button {
+form button {
     background-color: #3b82f6;
     color: white;
     border: none;
@@ -191,7 +191,7 @@ body {
     cursor: pointer;
 }
 
-.booking-form button:hover {
+form button:hover {
     background-color: #2563eb;
 }
 

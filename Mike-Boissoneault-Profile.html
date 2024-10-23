@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Boissoneault Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
-
+    <link rel="stylesheet" href="styles/comment_section.css">
     <script src="scripts.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -34,7 +34,7 @@
     </script>
     </navbar>
 <body>
-    <div class="container"></div>
+    <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
                 <img src="Mike B/Screen+Shot+2019-03-07+at+1.14.46+PM.png" alt="Mike Boissoneault profile picture">
@@ -82,15 +82,38 @@
                     <div class="button-container">
                         <button id="bookMeBtn" class="book-me-btn">Book Me</button>
                     </div>
+                    <div id="bookingModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Make an Appointment</h2>
+                            <form id="bookingForm">
+                                <input type="text" id="name" placeholder="Your name" required>
+                                <input type="email" id="email" placeholder="Your email" required>
+                                <input type="tel" id="phone" placeholder="Your phone number" required>
+                                <input type="text" id="subject" placeholder="Request booking/question" required>
+                                <input type="date" id="appointment-date" required>
+                                <input type="time" id="appointment-time" required>
+                                <textarea id="message" placeholder="Describe your tattoo idea" required></textarea>
+                                <button type="submit">Send</button>
+                            </form>
+                               <h2>Comments</h2>
+                            <form id="comment-form">
+                                <input type="text" id="comment-name" placeholder="Your Name" required>
+                                <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
+                                <div class="star-rating" id="star-rating">
+                                    <span class="star" data-rating="1">&#9733;</span>
+                                    <span class="star" data-rating="2">&#9733;</span>
+                                    <span class="star" data-rating="3">&#9733;</span>
+                                    <span class="star" data-rating="4">&#9733;</span>
+                                    <span class="star" data-rating="5">&#9733;</span>
+                                </div>
+                                <button type="submit">Add Comment</button>
+                            </form>
+                        </div>
                 </section>
                     </div>
                     <section class="comment">
-                        <button id="openCommentBtn" class="open-comment-btn">Leave a Comment</button>
-                    </section>
-
-                    <div id="commentModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
+                        <div class="comment-section">
                             <h2>Comments</h2>
                             <form id="comment-form">
                                 <input type="text" id="comment-name" placeholder="Your Name" required>
@@ -104,12 +127,50 @@
                                 </div>
                                 <button type="submit">Add Comment</button>
                             </form>
-                            <ul id="comment-list" class="comment-list"></ul>
+                            <ul id="comment-list"></ul>
                         </div>
-                    </div>
+                        </form>
+                        <ul id="comment-list" class="comment-list"></ul>
+                    </section>
+                        
+                    </section>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const modal = document.getElementById('bookingModal');
+                        const btn = document.getElementById('bookMeBtn');
+                        const span = document.getElementsByClassName('close')[0];
+                        const form = document.getElementById('bookingForm');
             
+                        btn.onclick = function() {
+                            modal.style.display = 'block';
+                        }
+            
+                        span.onclick = function() {
+                            modal.style.display = 'none';
+                        }
+            
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = 'none';
+                            }
+                        }
+            
+                        form.onsubmit = function(e) {
+                            e.preventDefault();
+                            // Here you would typically send the form data to a server
+                            console.log('Booking submitted');
+                            modal.style.display = 'none';
+                            // You might want to show a confirmation message to the user here
+                            alert('Your booking request has been sent successfully!');
+                        }
+                        // Initialize Lucide icons
+                        lucide.createIcons();
+                    });
+                </script>
                 <script src="/functions/comment.js"></script>
+            </div>
+        </div>
     </body>
         <footer>
         <div id="footer-placeholder"></div>
