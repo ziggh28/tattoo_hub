@@ -102,22 +102,40 @@
         }
 
         .search-button {
-            padding: 0.75rem 1.2rem; /* Increased padding to match input height */
+            padding: 0.5rem 1.2rem; /* Decreased padding */
             background-color: #ffa500;
             border: none;
             border-radius: 0 4px 4px 0;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-size: 1rem;
-            height: 100%; /* Match the height of the input */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 0.95rem; /* Slightly decreased font size */
         }
 
         .search-button:hover {
             background-color: #ff8c00;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-top: none;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-result-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .search-result-item:hover {
+            background-color: #f0f0f0;
         }
 
         @media (max-width: 768px) {
@@ -182,10 +200,11 @@
         <div class="navbar-container">
             <a href="index.html" class="navbar-logo">Tattoo Hub</a>
             <form class="search-form" action="/search" method="get">
-                <input type="text" class="search-input" placeholder="Search for tattoo artists, styles, or designs..." name="q" aria-label="Search">
+                <input type="text" id="search-input" class="search-input" placeholder="Search for tattoo artists, styles, or designs..." name="q" aria-label="Search" oninput="performSearch()">
                 <button type="submit" class="search-button" aria-label="Search">
                     <i class="fas fa-search"></i>
                 </button>
+                <div id="search-results" class="search-results"></div>
             </form>
             <button class="navbar-toggle" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
@@ -219,51 +238,52 @@
                 });
             });
         });
-           // Sample data for search (replace with your actual data)
-           const searchData = [
-           { type: 'artist', name: 'John Doe', style: 'Traditional', location: 'New York' },
-           { type: 'artist', name: 'Jane Smith', style: 'Watercolor', location: 'Los Angeles' },
-           { type: 'style', name: 'Japanese', location: 'Various' },
-           { type: 'style', name: 'Blackwork', location: 'Various' },
-           { type: 'location', name: 'Chicago', style: 'Various' },
-           { type: 'location', name: 'Miami', style: 'Various' },
-       ];
 
-       function performSearch() {
-           const searchInput = document.getElementById('search-input');
-           const searchResults = document.getElementById('search-results');
-           const query = searchInput.value.toLowerCase();
+        // Sample data for search (replace with your actual data)
+        const searchData = [
+            { type: 'artist', name: 'John Doe', style: 'Traditional', location: 'New York' },
+            { type: 'artist', name: 'Jane Smith', style: 'Watercolor', location: 'Los Angeles' },
+            { type: 'style', name: 'Japanese', location: 'Various' },
+            { type: 'style', name: 'Blackwork', location: 'Various' },
+            { type: 'location', name: 'Chicago', style: 'Various' },
+            { type: 'location', name: 'Miami', style: 'Various' },
+        ];
 
-           // Clear previous results
-           searchResults.innerHTML = '';
+        function performSearch() {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const query = searchInput.value.toLowerCase();
 
-           if (query.length < 2) {
-               searchResults.style.display = 'none';
-               return;
-           }
+            // Clear previous results
+            searchResults.innerHTML = '';
 
-           const filteredResults = searchData.filter(item => 
-               item.name.toLowerCase().includes(query) ||
-               item.style.toLowerCase().includes(query) ||
-               item.location.toLowerCase().includes(query)
-           );
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
 
-           if (filteredResults.length > 0) {
-               filteredResults.forEach(item => {
-                   const resultItem = document.createElement('div');
-                   resultItem.className = 'search-result-item';
-                   resultItem.textContent = `${item.name} (${item.type}) - ${item.style}, ${item.location}`;
-                   resultItem.addEventListener('click', () => {
-                       searchInput.value = item.name;
-                       searchResults.style.display = 'none';
-                   });
-                   searchResults.appendChild(resultItem);
-               });
-               searchResults.style.display = 'block';
-           } else {
-               searchResults.style.display = 'none';
-           }
-       }
+            const filteredResults = searchData.filter(item => 
+                item.name.toLowerCase().includes(query) ||
+                item.style.toLowerCase().includes(query) ||
+                item.location.toLowerCase().includes(query)
+            );
+
+            if (filteredResults.length > 0) {
+                filteredResults.forEach(item => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.textContent = `${item.name} (${item.type}) - ${item.style}, ${item.location}`;
+                    resultItem.addEventListener('click', () => {
+                        searchInput.value = item.name;
+                        searchResults.style.display = 'none';
+                    });
+                    searchResults.appendChild(resultItem);
+                });
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>

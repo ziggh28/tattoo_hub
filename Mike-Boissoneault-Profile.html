@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Boissoneault Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
-    <link rel="stylesheet" href="styles/comment_section.css">
-    <script src="scripts.js" defer></script>
+    <script src="functions/Profile.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -17,12 +16,10 @@
   });
 })();
 </script>
-<script src="scripts.js"></script>
 </head>
 <body>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script> src="script.js"</script>
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
@@ -135,39 +132,6 @@
                         
                     </section>
                 </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const modal = document.getElementById('bookingModal');
-                        const btn = document.getElementById('bookMeBtn');
-                        const span = document.getElementsByClassName('close')[0];
-                        const form = document.getElementById('bookingForm');
-            
-                        btn.onclick = function() {
-                            modal.style.display = 'block';
-                        }
-            
-                        span.onclick = function() {
-                            modal.style.display = 'none';
-                        }
-            
-                        window.onclick = function(event) {
-                            if (event.target == modal) {
-                                modal.style.display = 'none';
-                            }
-                        }
-            
-                        form.onsubmit = function(e) {
-                            e.preventDefault();
-                            // Here you would typically send the form data to a server
-                            console.log('Booking submitted');
-                            modal.style.display = 'none';
-                            // You might want to show a confirmation message to the user here
-                            alert('Your booking request has been sent successfully!');
-                        }
-                        // Initialize Lucide icons
-                        lucide.createIcons();
-                    });
-                </script>
                 <script src="/functions/comment.js"></script>
             </div>
         </div>
