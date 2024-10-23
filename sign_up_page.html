@@ -3,45 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tattoo Hub - Login</title>
-    <link rel="stylesheet" href="styles/login.css">
-    <script src="scripts.js" defer></script>
+    <title>Sign Up - Tattoo Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/sign_up_page.css">
 </head>
 <body>
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h1>Login to Tattoo Hub</h1>
-                <button type="button" class="close" aria-label="Close" onclick="closeModal()">
-                    &times;
+    <div id="navbar-placeholder"></div>
+    <div class="signup-container">
+        <div class="card">
+            <h1>Sign Up</h1>
+            <p>Choose your account type to get started</p>
+            <div class="signup-options">
+                <a href="create_profile.html" class="signup-button artist">
+                    <i class="fas fa-paint-brush"></i>
+                    Sign up as an Artist
+                </a>
+                <button class="signup-button client" onclick="signUpAs('client')">
+                    <i class="fas fa-user"></i>
+                    Sign up as a Client
                 </button>
-            </header>
-
-            <form action="/login" method="POST">
-                <div class="imgcontainer">
-                    <img src="/images/avatar.png" alt="User avatar" class="avatar">
-                </div>
-
-                <div class="container">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
-
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
-
-                    <button type="submit">Login</button>
-
-                    <label class="remember-me">
-                        <input type="checkbox" name="remember" checked> Remember me
-                    </label>
-                </div>
-            </form>
+            </div>
+            <p class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </p>
         </div>
     </div>
 
     <script>
-        function closeModal() {
-            document.getElementById('loginModal').style.display = 'none';
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+
+        function signUpAs(type) {
+            // Implement sign-up logic here
+            console.log(`Signing up as ${type}`);
+            // You can redirect to a specific sign-up form or handle the sign-up process here
         }
     </script>
 </body>
