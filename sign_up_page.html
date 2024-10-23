@@ -42,5 +42,13 @@
             // You can redirect to a specific sign-up form or handle the sign-up process here
         }
     </script>
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

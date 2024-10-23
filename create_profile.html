@@ -25,7 +25,7 @@
             <input type="file" id="pic-upload" style="display: none;" accept="image/*">
             <div class="profile-info">
                 <h1 class="name editable" contenteditable="true">Name</h1>
-                <p class="job-title editable" contenteditable="true">style</p>
+                <p class="job-title editable" contenteditable="true">Style</p>
                 <p><strong>Studio:</strong> <span class="editable" contenteditable="true">blank</span></p>
                 <p><strong>Location:</strong> <span class="editable" contenteditable="true">blank</span></p>
                 <p><strong>Experience:</strong> <span class="editable" contenteditable="true">blank</span></p>
@@ -54,4 +54,12 @@
 
     <script src="functions/create_profile.js"></script>
 </body>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </html>

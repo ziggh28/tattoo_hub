@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tattoo Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <script src="jscustomersupport.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -65,7 +65,16 @@
     </section>
 </form>
 </section>
-
     <script src="/functions/commment.js"></script>
 </body>
+<footer>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+</footer>
 </html>

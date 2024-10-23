@@ -28,7 +28,7 @@
             <div class="artist-list">
                 <div class="artist-card">
                     <img src="Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="artist1-profile.html">Mike Boissoneault</a></h3>
+                    <h3><a href="Mike-Boissoneault-Profile.html">Mike Boissoneault</a></h3>
                     <p>Asian</p>
                 </div>
                 <div class="artist-card">
@@ -45,5 +45,13 @@
         </section>
         <div id="galleryContainer" class="gallery-container"></div>
     </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
