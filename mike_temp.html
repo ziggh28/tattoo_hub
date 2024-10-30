@@ -115,7 +115,7 @@
                 <input type="date" id="appointment-date" required>
                 <input type="time" id="appointment-time" required>
                 <textarea id="message" placeholder="Describe your tattoo idea" required></textarea>
-                <button type="submit">Send</button>
+                <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
             </form>
         </div>
     </div>
