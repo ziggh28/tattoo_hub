@@ -1,19 +1,15 @@
-<?php 
-    session_start();
-    date_default_timezone_set('America/New_York');
-    include 'functions/comments.inc.php';
-?>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mike Boissoneault Profile</title>
+    <title>Mike Boissoneault Profile - Tattoo Hub</title>
     <link rel="stylesheet" href="styles/Profile.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="functions/Profile.js" defer></script>
+        <script src="scripts.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
+    </script>
 <script type="text/javascript">
 (function(){
   emailjs.init({
@@ -21,25 +17,21 @@
   });
 })();
 </script>
+<script src="scripts.js"></script>
 </head>
 <body>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <navbar>
     <div id="navbar-placeholder"></div>
-    <script>    
-        fetch('navbar.php')
+    <script>
+        fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
-    </navbar>
-<body>
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
-                <img src="Mike B/resizedportpic.jpg" alt="Mike Boissoneault profile picture">
+                <img src="Mike B/Screen+Shot+2019-03-07+at+1.14.46+PM.png" alt="Mike Boissoneault profile picture">
             </div>
             <div class="profile-info">
                 <h1>Mike Boissoneault</h1>
@@ -84,10 +76,49 @@
                     <div class="button-container">
                         <button id="bookMeBtn" class="book-me-btn">Book Me</button>
                     </div>
-                    <div id="bookingModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2>Make an Appointment</h2>
+                    <section class="comment-section">
+                        <h2>Comments</h2>
+                        <form id="comment-form">
+                            <input type="text" id="comment-name" placeholder="Your Name" required>
+                            <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
+                            <div class="star-rating" id="star-rating">
+                                <label for="star1" title="1 star"></label>
+                                <input type="radio" id="star1" name="rating" value="1" required/>
+                                <label for="star2" title="2 stars"></label>
+                                <input type="radio" id="star2" name="rating" value="2"/>
+                                <label for="star3" title="3 stars"></label>
+                                <input type="radio" id="star3" name="rating" value="3"/>
+                                <label for="star4" title="4 stars"></label>
+                                <input type="radio" id="star4" name="rating" value="4"/>
+                                <label for="star5" title="5 stars"></label>
+                                <input type="radio" id="star5" name="rating" value="5"/>
+                            </div>
+                            <button type="submit">Add Comment</button>
+                        </form>
+                        <ul id="comment-list" class="comment-list"></ul>
+                    </section>
+                </section>
+                <section class="reviews-section">
+                    <h2>Reviews</h2>
+                    <div class="review">
+                        <h3>John Doe</h3>
+                        <p>Amazing artist! Loved the work. Highly recommended!</p>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <div class="review">
+                        <h3>Jane Smith</h3>
+                        <p>Very professional and talented. Will come back for more tattoos!</p>
+                        <span class="rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Make an Appointment</h2>
                     <form>
                         <section id="contact" class="container">
                             <div style="text-align:center">
@@ -119,53 +150,15 @@
                                   <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
                         </section>
                 </form>
-                            <form id="comment-form">
-                                <div class="star-rating" id="star-rating">
-                                </div>
-                            </form>
-                        </div>
-                </section>
-                    </div>
-                    
-                </div>
-                <h2>Reviews</h2>
-                <?php
-                                    if(!isset($_SESSION['name'])){
-                                        echo "Please make an account or sign in to submit reviews.";
-                                    } else{
-                                        echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment about your experience!
-                                        <form id='comment-form' method='POST' action='".setComments()."'>
-                                        <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
-                                        <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
-                                        <fieldset class='rating'>
-                                            <input type='radio' id='star5' name='ratings' value='5'>
-                                            <label for='star5' class='full'></label>
-                                            <input type='radio' id='star4' name='ratings' value='4'>
-                                            <label for='star4' class='full'></label>
-                                            <input type='radio' id='star3' name='ratings' value='3'>
-                                            <label for='star3' class='full'></label>
-                                            <input type='radio' id='star2' name='ratings' value='2'>
-                                            <label for='star2' class='full'></label>
-                                            <input type='radio' id='star1' name='ratings' value='1'>
-                                            <label for='star1' class='full'></label>
-                                        </fieldset>      
-                                        <textarea name='message' placeholder='Write your comment here'></textarea>
-                                        <button type='submit' name='commentSubmit'>Add Comment</button>
-                                        </form>";
-                                    }
-                                    getComments();
-                                ?>    
-            </div>
         </div>
-    </body>
-        <footer>
-        <div id="footer-placeholder"></div>
-        <script>
-            fetch('footer.php')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        </script>
-    </footer>
+    </div>
+</body>
+<div id="footer-placeholder"></div> 
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </html>

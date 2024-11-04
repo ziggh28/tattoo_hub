@@ -6,66 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tattoo Hub</title>
     <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="functions/contact.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init({
+                publicKey: "HE1JjwRQAsDoZudBU",
+            });
+        })();
+    </script>
+    <script src="jscustomersupport.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.php" class="navbar-logo">Tattoo Hub</a>
-            <?php
-                    if(isset($_SESSION['name'])) {
-                        echo "Hello  " . $_SESSION['name'];
-                    }
-                ?>
-            <ul class="navbar-menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="contact.php">Customer Support</a></li>
-                <li><a href="login_page.php">Login</a></li>
-                <li><a href="sign_up_page.php">Sign Up</a></li>
-                <li><a href="logout.php">Log Out</a>
-                <li><a href="#">Profile</a></li>
-            </ul>
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('navbar.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    </script>
+    <header>
+        <div class="container">
+            <br>
+            <h1>Contact Us</h1>
         </div>
-    </nav>
-    <div class="container">
-        <div class="contact-info">
+    </header>
+    <section id="contact" class="container">
+        <div style="text-align:center">
             <h2>Customer Service</h2>
             <p>Phone: 888-888-8888</p>
             <p>Email: customerservice@tattoohub.com</p>
         </div>
-
-        <form id="contact-form" class="contact-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <select id="subject" name="subject" required>
-                    <option value="">Select an issue</option>
-                    <option value="Business Inquiry">Business Inquiry</option>
-                    <option value="Pricing">Pricing</option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Advertisement">Advertisement</option>
-                    <option value="Partnership">Partnership</option>
-                    <option value="General Question">General Question</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message-text" name="message" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="message"></div>
-    </div>
-
-    <script src="/functions/commment.js"></script>
-</body>
+        <div class="column">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name.." required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pnumber">Phone Number</label>
+                    <input type="tel" id="pnumber" name="pnumber" placeholder="Your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Request booking/question" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Time/date and Idea" style="height:170px" required></textarea>
+                </div> 
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            sendMail();
+        });
+    </script>
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+  </body>
 </html>

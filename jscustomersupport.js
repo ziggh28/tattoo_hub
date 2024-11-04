@@ -8,7 +8,7 @@ function sendMail(){
         subject : document.getElementById("subject").value,
         message : document.getElementById("message").value,
     }                              
-    emailjs.send("service_ndsvvl7","template_bv7ciun",parms).then(alert("Booking Sent!"))
+    emailjs.send("service_ndsvvl7","template_sk7jc1a",parms).then(alert("Booking Sent!"))
 }
 document.addEventListener('DOMContentLoaded', () => {
     const styleSearch = document.getElementById('styleSearch');
@@ -28,5 +28,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
