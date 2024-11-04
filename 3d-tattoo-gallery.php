@@ -11,11 +11,7 @@
 <body>
 <div id="navbar-placeholder"></div>
     <script>
-<<<<<<< HEAD:3d-tattoo-gallery.php
         fetch('navbar.php')
-=======
-        fetch('navbar.html')
->>>>>>> main:3d-tattoo-gallery.html
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
