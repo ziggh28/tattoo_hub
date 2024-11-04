@@ -34,7 +34,7 @@
                 </div>
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="Bill-Lee-Profile.php">Bill Le</a></h3>
+                    <h3><a href="Bill-Le-Profile.php">Bill Le</a></h3>
                     <p>Modern</p>
                 </div>
                 <div class="artist-card">

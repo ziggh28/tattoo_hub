@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Lee Profile - Tattoo Hub</title>
+    <title>Bill Le Profile - Tattoo Hub</title>
     <link rel="stylesheet" href="styles/Profile.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="scripts.js" defer></script>
@@ -37,10 +37,10 @@
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
-                <img src="Bill Le/Profile.jpg" alt="Bill Lee profile picture">
+                <img src="Bill Le/Profile.jpg" alt="Bill Le profile picture">
             </div>
             <div class="profile-info">
-                <h1>Bill Lee</h1>
+                <h1>Bill Le</h1>
                 <div class="contact-info">
                     <p>
                         <a href="https://www.holisticink.com/holisticink-artists/bill-le/" target="_blank" rel="noopener noreferrer">
