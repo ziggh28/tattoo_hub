@@ -130,11 +130,12 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
+                                    $table = "mike_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{
                                         echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment about your experience!
-                                        <form id='comment-form' method='POST' action='".setComments()."'>
+                                        <form id='comment-form' method='POST' action='".setComments($table)."'>
                                         <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
                                         <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
                                         <fieldset class='rating'>
@@ -153,7 +154,7 @@
                                         <button type='submit' name='commentSubmit'>Add Comment</button>
                                         </form>";
                                     }
-                                    getComments();
+                                    getComments($table);
                                 ?>    
             </div>
         </div>

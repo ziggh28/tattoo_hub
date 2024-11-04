@@ -199,7 +199,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">Tattoo Hub</a>
+            <a href="index.php" class="navbar-logo">Tattoo Hub</a>
             <form class="search-form" action="/search" method="get">
                 <input type="text" id="search-input" class="search-input" placeholder="Search for tattoo artists, styles, or designs..." name="q" aria-label="Search" oninput="performSearch()">
                 <button type="submit" class="search-button" aria-label="Search">

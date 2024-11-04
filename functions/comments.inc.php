@@ -1,21 +1,21 @@
 <?php
 
 include 'connection.php';
-function setComments(){
+function setComments($table){
 if (isset($_POST['commentSubmit'])){
         global $conn;
         $id = $_POST["id"];
         $ratings = $_POST["ratings"];
         $date = $_POST["date"];
         $message = $_POST['message'];
-        $sql = "INSERT INTO comment_section(id, date, ratings,message) VALUES('$id', '$date', '$ratings', '$message')";
+        $sql = "INSERT INTO $table(id, date, ratings,message) VALUES('$id', '$date', '$ratings', '$message')";
         $result = mysqli_query($conn, $sql);
     }
 }
 
-function getComments() {
+function getComments($table) {
     global $conn;
-    $sql = "SELECT * FROM comment_section";
+    $sql = "SELECT * FROM $table";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "<div id='comment-box'>";
