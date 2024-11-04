@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,11 +213,17 @@
                 <span class="bar"></span>
             </button>
             <ul class="navbar-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="contact.html"><i class="fas fa-headset"></i> Customer Support</a></li>
-                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                <li><a href="sign_up_page.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+                <?php
+                    if(isset($_SESSION['name'])) {
+                    echo "Hello  " . $_SESSION['name'];
+                    }
+                ?>
+                <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="contact.php"><i class="fas fa-headset"></i> Customer Support</a></li>
+                <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="sign_up_page.php"><i class="fas fa-user-plus"></i> Sign Up</a></li>
                 <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="logout.php">Log Out</a>
             </ul>
         </div>
     </nav>

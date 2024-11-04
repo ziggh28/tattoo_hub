@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
 <nav>
     <div id="nav-placeholder"></div>
     <script>
-        fetch('navbar.html')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
@@ -152,7 +153,7 @@
 <footer>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

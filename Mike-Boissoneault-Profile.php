@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    date_default_timezone_set('America/New_York');
+    include 'functions/comments.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +28,7 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar.html')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -114,53 +119,49 @@
                                   <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
                         </section>
                 </form>
-                               <h2>Comments</h2>
                             <form id="comment-form">
-                                <input type="text" id="comment-name" placeholder="Your Name" required>
-                                <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
                                 <div class="star-rating" id="star-rating">
-                                    <span class="star" data-rating="1">&#9733;</span>
-                                    <span class="star" data-rating="2">&#9733;</span>
-                                    <span class="star" data-rating="3">&#9733;</span>
-                                    <span class="star" data-rating="4">&#9733;</span>
-                                    <span class="star" data-rating="5">&#9733;</span>
                                 </div>
-                                <button type="submit">Add Comment</button>
                             </form>
                         </div>
                 </section>
                     </div>
-                    <section class="comment">
-                        <div class="comment-section">
-                            <h2>Comments</h2>
-                            <form id="comment-form">
-                                <input type="text" id="comment-name" placeholder="Your Name" required>
-                                <textarea id="comment-text" placeholder="Write your comment here" required></textarea>
-                                <div class="star-rating" id="star-rating">
-                                    <span class="star" data-rating="1">&#9733;</span>
-                                    <span class="star" data-rating="2">&#9733;</span>
-                                    <span class="star" data-rating="3">&#9733;</span>
-                                    <span class="star" data-rating="4">&#9733;</span>
-                                    <span class="star" data-rating="5">&#9733;</span>
-                                </div>
-                                <button type="submit">Add Comment</button>
-                            </form>
-                            <ul id="comment-list"></ul>
-                        </div>
-                        </form>
-                        <ul id="comment-list" class="comment-list"></ul>
-                    </section>
-                        
-                    </section>
+                    
                 </div>
-                <script src="/functions/comment.js"></script>
+                <h2>Reviews</h2>
+                <?php
+                                    if(!isset($_SESSION['name'])){
+                                        echo "Please make an account or sign in to submit reviews.";
+                                    } else{
+                                        echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment about your experience!
+                                        <form id='comment-form' method='POST' action='".setComments()."'>
+                                        <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
+                                        <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
+                                        <fieldset class='rating'>
+                                            <input type='radio' id='star5' name='ratings' value='5'>
+                                            <label for='star5' class='full'></label>
+                                            <input type='radio' id='star4' name='ratings' value='4'>
+                                            <label for='star4' class='full'></label>
+                                            <input type='radio' id='star3' name='ratings' value='3'>
+                                            <label for='star3' class='full'></label>
+                                            <input type='radio' id='star2' name='ratings' value='2'>
+                                            <label for='star2' class='full'></label>
+                                            <input type='radio' id='star1' name='ratings' value='1'>
+                                            <label for='star1' class='full'></label>
+                                        </fieldset>      
+                                        <textarea name='message' placeholder='Write your comment here'></textarea>
+                                        <button type='submit' name='commentSubmit'>Add Comment</button>
+                                        </form>";
+                                    }
+                                    getComments();
+                                ?>    
             </div>
         </div>
     </body>
         <footer>
         <div id="footer-placeholder"></div>
         <script>
-            fetch('footer.html')
+            fetch('footer.php')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-placeholder').innerHTML = data;

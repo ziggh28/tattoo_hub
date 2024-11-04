@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 <body>
     <div id="navbar-placeholder"></div>
     <script>
-        fetch('navbar.html')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -28,12 +29,12 @@
             <div class="artist-list">
                 <div class="artist-card">
                     <img src="Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="mike_temp.html">Mike Boissoneault</a></h3>
+                    <h3><a href="Mike-Boissoneault-Profile.php">Mike Boissoneault</a></h3>
                     <p>Asian</p>
                 </div>
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3><a href="Bill-Lee-Profile.html">Bill Le</a></h3>
+                    <h3><a href="Bill-Lee-Profile.php">Bill Le</a></h3>
                     <p>Modern</p>
                 </div>
                 <div class="artist-card">
@@ -47,7 +48,7 @@
     </div>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

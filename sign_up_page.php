@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,19 +19,19 @@
                     <i class="fas fa-paint-brush"></i>
                     Sign up as an Artist
                 </a>
-                <button class="signup-button client" onclick="signUpAs('client')">
+                <a href="sign_up_client.php" class="signup-button client">
                     <i class="fas fa-user"></i>
                     Sign up as a Client
-                </button>
+            </a>
             </div>
             <p class="login-link">
-                Already have an account? <a href="login.html">Login here</a>
+                Already have an account? <a href="login.php">Login here</a>
             </p>
         </div>
     </div>
 
     <script>
-        fetch('navbar.html')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -44,7 +45,7 @@
     </script>
     <div id="footer-placeholder"></div>
     <script>
-        fetch('footer.html')
+        fetch('footer.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
