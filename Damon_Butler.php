@@ -39,7 +39,7 @@
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
-                <img src="\Damon Butler\Demon Profile.jpg" alt="Mike Boissoneault profile picture">
+                <img src="Damon Butler\Demon Profile.jpg" alt="Mike Boissoneault profile picture">
             </div>
             <div class="profile-info">
                 <h1>Damon Butler</h1>
@@ -64,14 +64,14 @@
                     <h2>Gallery</h2>
                     <div class="gallery-grid">
                         <img src="damon-butler-1.jpg">
-                        <img src="\Damon Butler\damon-butler-2.jpg">
-                        <img src="\Damon Butler\damon-butler-3.jpg">
-                        <img src="\Damon Butler\damon-butler-4.jpg">
-                        <img src="\Damon Butler\damon-butler-5.jpg">
-                        <img src="\Damon Butler\damon-butler-6.jpg">
-                        <img src="\Damon Butler\damon-butler-7.jpg">
-                        <img src="\Damon Butler\damon-butler-8.jpg">
-                        <img src="\Damon Butler\damon-butler-19.jpg">
+                        <img src="Damon Butler\damon-butler-2.jpg">
+                        <img src="Damon Butler\damon-butler-3.jpg">
+                        <img src="Damon Butler\damon-butler-4.jpg">
+                        <img src="Damon Butler\damon-butler-5.jpg">
+                        <img src="Damon Butler\damon-butler-6.jpg">
+                        <img src="Damon Butler\damon-butler-7.jpg">
+                        <img src="Damon Butler\damon-butler-8.jpg">
+                        <img src="Damon Butler\damon-butler-19.jpg">
                     </div>
                 </section>
             </div>
