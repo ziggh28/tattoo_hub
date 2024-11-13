@@ -42,7 +42,7 @@
                 <img src="vinny-nguyen Profile.jpg" alt="Mike Boissoneault profile picture">
             </div>
             <div class="profile-info">
-                <h1>Mike Boissoneault</h1>
+                <h1>Vinny Nguyen</h1>
                 <div class="contact-info">
                     <p>
                         <a href="https://www.holisticink.com/holisticink-artists/vinny-nguyen/" target="_blank" rel="noopener noreferrer">
