@@ -237,6 +237,9 @@
             <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
             <li><a href="example2.html" class="style-item">Line Work</a></li>
             <li><a href="example3.html" class="style-item">Traditional</a></li>
+            <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
+            <li><a href="example2.html" class="style-item">Line Work</a></li>
+            <li><a href="example3.html" class="style-item">Traditional</a></li>
         </ul>
     </div>
 
