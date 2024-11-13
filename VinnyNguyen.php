@@ -39,7 +39,7 @@
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
-                <img src="vinny-nguyen Profile.jpg" alt="Mike Boissoneault profile picture">
+                <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Mike Boissoneault profile picture">
             </div>
             <div class="profile-info">
                 <h1>Vinny Nguyen</h1>
