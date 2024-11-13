@@ -234,12 +234,16 @@
         <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
+            <li><a href="example3.html" class="style-item">Anime</a></li>
             <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
-            <li><a href="example2.html" class="style-item">Line Work</a></li>
+            <li><a href="example2.html" class="style-item">Realism</a></li>
             <li><a href="example3.html" class="style-item">Traditional</a></li>
-            <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
+            <li><a href="3d-tattoo-gallery.php" class="style-item">Neo-Traditional</a></li>
             <li><a href="example2.html" class="style-item">Line Work</a></li>
-            <li><a href="example3.html" class="style-item">Traditional</a></li>
+            <li><a href="example3.html" class="style-item">Black and Grey</a></li>
+            <li><a href="example3.html" class="style-item">Bio-Mechanical</a></li>
+            <li><a href="example3.html" class="style-item">Portriat</a></li>
+            
         </ul>
     </div>
 
