@@ -230,7 +230,7 @@
 
     <!-- Sidebar with Search Functionality -->
     <div class="sidebar">
-        <h2>Search by Style</h2>
+        <h2>Styles</h2>
         <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
