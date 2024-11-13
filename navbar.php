@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="sidebar.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        * {
+                * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -18,6 +21,8 @@
         }
 
         .navbar {
+            position: fixed;
+            width: 100%;
             background-color: #333;
             color: #fff;
             padding: 1rem;
@@ -196,22 +201,9 @@
         }
     </style>
 </head>
-<body>
-    <nav class="navbar">
+<nav class="navbar">
         <div class="navbar-container">
             <a href="index.php" class="navbar-logo">Tattoo Hub</a>
-            <form class="search-form" action="/search" method="get">
-                <input type="text" id="search-input" class="search-input" placeholder="Search for tattoo artists, styles, or designs..." name="q" aria-label="Search" oninput="performSearch()">
-                <button type="submit" class="search-button" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
-                <div id="search-results" class="search-results"></div>
-            </form>
-            <button class="navbar-toggle" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
             <ul class="navbar-menu">
                 <?php
                     if(isset($_SESSION['name'])) {
@@ -226,71 +218,60 @@
                 <li><a href="logout.php">Log Out</a>
             </ul>
         </div>
-    </nav>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Search</title>
+</head>
+<body>
+
+    <!-- Sidebar with Search Functionality -->
+    <div class="sidebar">
+        <h2>Search by Style</h2>
+        <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
+        <div id="recommendationContainer" class="recommendation-container"></div>
+        <ul class="style-list" id="styleList">
+            <li><a href="example3.html" class="style-item">Anime</a></li>
+            <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
+            <li><a href="example2.html" class="style-item">Realism</a></li>
+            <li><a href="example3.html" class="style-item">Traditional</a></li>
+            <li><a href="3d-tattoo-gallery.php" class="style-item">Neo-Traditional</a></li>
+            <li><a href="example2.html" class="style-item">Line Work</a></li>
+            <li><a href="example3.html" class="style-item">Black and Grey</a></li>
+            <li><a href="example3.html" class="style-item">Bio-Mechanical</a></li>
+            <li><a href="example3.html" class="style-item">Portriat</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- JavaScript for Search Functionality -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbarToggle = document.querySelector('.navbar-toggle');
-            const navbarMenu = document.querySelector('.navbar-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            const styleSearch = document.getElementById('styleSearch');
+            const styleList = document.getElementById('styleList');
+            const styles = styleList.getElementsByTagName('li');
 
-            navbarToggle.addEventListener('click', function() {
-                navbarToggle.classList.toggle('active');
-                navbarMenu.classList.toggle('active');
-            });
+            // Filter list based on input
+            styleSearch.addEventListener('keyup', () => {
+                const filter = styleSearch.value.toLowerCase();
 
-            // Close the mobile menu when a link is clicked
-            document.querySelectorAll('.navbar-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navbarToggle.classList.remove('active');
-                    navbarMenu.classList.remove('active');
+                // Loop through all list items and hide those that don't match the search
+                Array.from(styles).forEach(style => {
+                    const text = style.textContent || style.innerText;
+                    if (text.toLowerCase().includes(filter)) {
+                        style.style.display = ''; // Show matching items
+                    } else {
+                        style.style.display = 'none'; // Hide non-matching items
+                    }
                 });
             });
         });
-
-        // Sample data for search (replace with your actual data)
-        const searchData = [
-            { type: 'artist', name: 'John Doe', style: 'Traditional', location: 'New York' },
-            { type: 'artist', name: 'Jane Smith', style: 'Watercolor', location: 'Los Angeles' },
-            { type: 'style', name: 'Japanese', location: 'Various' },
-            { type: 'style', name: 'Blackwork', location: 'Various' },
-            { type: 'location', name: 'Chicago', style: 'Various' },
-            { type: 'location', name: 'Miami', style: 'Various' },
-        ];
-
-        function performSearch() {
-            const searchInput = document.getElementById('search-input');
-            const searchResults = document.getElementById('search-results');
-            const query = searchInput.value.toLowerCase();
-
-            // Clear previous results
-            searchResults.innerHTML = '';
-
-            if (query.length < 2) {
-                searchResults.style.display = 'none';
-                return;
-            }
-
-            const filteredResults = searchData.filter(item => 
-                item.name.toLowerCase().includes(query) ||
-                item.style.toLowerCase().includes(query) ||
-                item.location.toLowerCase().includes(query)
-            );
-
-            if (filteredResults.length > 0) {
-                filteredResults.forEach(item => {
-                    const resultItem = document.createElement('div');
-                    resultItem.className = 'search-result-item';
-                    resultItem.textContent = `${item.name} (${item.type}) - ${item.style}, ${item.location}`;
-                    resultItem.addEventListener('click', () => {
-                        searchInput.value = item.name;
-                        searchResults.style.display = 'none';
-                    });
-                    searchResults.appendChild(resultItem);
-                });
-                searchResults.style.display = 'block';
-            } else {
-                searchResults.style.display = 'none';
-            }
-        }
     </script>
+
 </body>
+</html>
+
 </html>

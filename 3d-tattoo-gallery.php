@@ -31,8 +31,8 @@
                 <h3><a href="Bill-Lee-Profile.html">Bill Le</a></h3>
             </div>
             <div class="artist-card">
-                <img src="path/to/image3.jpg" alt="Artist Three" class="artist-image">
-                <h3>Artist Three</h3>
+                <img src="Vinny Nguyen\vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
+                <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
             </div>
         </div>
     </div>

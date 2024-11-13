@@ -35,12 +35,22 @@
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
                     <h3><a href="Bill-Le-Profile.php">Bill Le</a></h3>
-                    <p>Modern</p>
+                    <p>Realism, Asian, Anime</p>
                 </div>
                 <div class="artist-card">
-                    <img src="path/to/image3.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Artist Three</h3>
-                    <p>Realism</p>
+                    <img src="Damon Butler/Demon Profile.jpg" alt="Artist Three" class="artist-image">
+                    <h3><a href="Damon_Butler.php">Damon Butler</a></h3>
+                    <p>FineLine, Black and Grey, Neo-Traditional, Traditional</p>
+                </div>
+                <div class="artist-card">
+                    <img src="Jimmy Johnson/JimmyJohnson_profile.png" alt="Artist Three" class="artist-image">
+                    <h3><a href="Jimmy_Johnson.php">Jimmy Johnson</a></h3>
+                    <p>Portrait, Fine-Line, Black and Grey</p>
+                </div>
+                <div class="artist-card">
+                    <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
+                    <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
+                    <p>Asian, Realism, BioMechanical</p>
                 </div>
             </div>
         </section>
@@ -56,3 +66,4 @@
     </script>
 </body>
 </html>
+
