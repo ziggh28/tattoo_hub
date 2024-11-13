@@ -76,7 +76,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar">
+            <div class="sidebar1">
                 <section class="location-section">
                     <h2>Location</h2>
                     <div class="map-container">

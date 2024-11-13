@@ -59,6 +59,19 @@ body {
     gap: 2rem;
 }
 
+.sidebar {
+    position: fixed;
+    top: 60px; /* Adjust based on the height of your navbar */
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
 .gallery-section h2,
 .sidebar h2 {
     font-size: 1.5rem;
