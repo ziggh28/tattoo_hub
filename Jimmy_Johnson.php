@@ -63,15 +63,15 @@
                 <section class="gallery-section">
                     <h2>Gallery</h2>
                     <div class="gallery-grid">
-                        <img src="\Jimmy Johnson\63237be8e7597573c0b7f76a_Seaport_Tattoo_Jimmy_05.jpeg">
-                        <img src="\Jimmy Johnson\63237cfe6d91a93002e12c83_Seaport_Tattoo_Jimmy_26.jpeg">
-                        <img src="\Jimmy Johnson\63237db18e293a82dd7940d9_Seaport_Tattoo_Jimmy_39.jpeg">
-                        <img src="\Jimmy Johnson\63237dbf7e6999124e6571ea_Seaport_Tattoo_Jimmy_40.jpeg">
-                        <img src="\Jimmy Johnson\63237e1c8ee804b7bcbdc6a6_Seaport_Tattoo_Jimmy_42.jpeg">
-                        <img src="\Jimmy Johnson\63237e6875ded06d16b0e8b9_Seaport_Tattoo_Jimmy_48.jpeg">
-                        <img src="\Jimmy Johnson\63237efd6d293058f2b1a777_Seaport_Tattoo_Jimmy_59.jpeg">
-                        <img src="\Jimmy Johnson\63237f19be53e1d731c6582f_Seaport_Tattoo_Jimmy_60.jpeg">
-                        <img src="\Jimmy Johnson\63237f43870a864c37ece664_Seaport_Tattoo_Jimmy_64.jpeg">
+                        <img src="Jimmy Johnson\63237be8e7597573c0b7f76a_Seaport_Tattoo_Jimmy_05.jpeg">
+                        <img src="Jimmy Johnson\63237cfe6d91a93002e12c83_Seaport_Tattoo_Jimmy_26.jpeg">
+                        <img src="Jimmy Johnson\63237db18e293a82dd7940d9_Seaport_Tattoo_Jimmy_39.jpeg">
+                        <img src="Jimmy Johnson\63237dbf7e6999124e6571ea_Seaport_Tattoo_Jimmy_40.jpeg">
+                        <img src="Jimmy Johnson\63237e1c8ee804b7bcbdc6a6_Seaport_Tattoo_Jimmy_42.jpeg">
+                        <img src="Jimmy Johnson\63237e6875ded06d16b0e8b9_Seaport_Tattoo_Jimmy_48.jpeg">
+                        <img src="Jimmy Johnson\63237efd6d293058f2b1a777_Seaport_Tattoo_Jimmy_59.jpeg">
+                        <img src="Jimmy Johnson\63237f19be53e1d731c6582f_Seaport_Tattoo_Jimmy_60.jpeg">
+                        <img src="Jimmy Johnson\63237f43870a864c37ece664_Seaport_Tattoo_Jimmy_64.jpeg">
                     </div>
                 </section>
             </div>
