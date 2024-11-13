@@ -26,12 +26,13 @@
 <nav>
     <div id="nav-placeholder"></div>
     <script>
-        fetch('navbar.php')
+        fetch('navbar_basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
             });
     </script>
+    <br><br><br><br>
 </nav>
 <body>
     <div class="container">
@@ -73,7 +74,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar">
+            <div class="sidebar2">
                     <h2>Location</h2>
                     <div class="map-container">
                         <iframe

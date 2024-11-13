@@ -30,4 +30,14 @@
         </div>
     </div>
 </body>
+<footer>
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('footer.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+    </footer>
 </html>

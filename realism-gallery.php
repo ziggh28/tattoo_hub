@@ -24,7 +24,7 @@
         <div id="galleryContainer" class="gallery-container">
             <div class="artist-card">
                 <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                <h3><a href="Bill-Lee-Profile.html">Bill Le</a></h3>
+                <h3><a href="Bill-Lee-Profile.php">Bill Le</a></h3>
             </div>
             <div class="artist-card">
                 <img src="Vinny Nguyen\vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
@@ -33,4 +33,14 @@
         </div>
     </div>
 </body>
+<footer>
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('footer.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+    </footer>
 </html>

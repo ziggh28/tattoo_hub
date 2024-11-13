@@ -7,6 +7,7 @@
     <title>Tattoo Hub</title>
     <style>
         .footer {
+            z-index: 9999;
             background-color: #333;
             color: #fff;
             padding: 0.5rem;
@@ -15,6 +16,7 @@
         }
 
         .footer-container {
+            z-index: 9999;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -23,11 +25,13 @@
         }
 
         .footer-section {
+            z-index: 9999;
             display: flex;
             align-items: center;
         }
 
         .footer-section p {
+            z-index: 9999;
             margin: 0 0.5rem 0 0;
         }
 
@@ -47,6 +51,7 @@
         }
 
         .footer-bottom {
+            z-index: 9999;
             font-size: 0.6rem;
             color: #ccc;
             text-align: center;

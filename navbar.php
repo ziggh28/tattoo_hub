@@ -228,10 +228,9 @@
 </head>
 <body>
 
-    <!-- Sidebar with Search Functionality -->
+    <!-- Sidebar Functionality -->
     <div class="sidebar">
-        <h2>Search by Style</h2>
-        <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
+        <h2>Style Categories</h2>
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
             <li><a href="Anime-Gallery.php" class="style-item">Anime</a></li>
@@ -241,7 +240,7 @@
             <li><a href="neo-tradional-Gallery.php" class="style-item">Neo-Traditional</a></li>
             <li><a href="BlackandGrey-Gallery.php" class="style-item">Black and Grey</a></li>
             <li><a href="Bio-Mechanical.php" class="style-item">Bio-Mechanical</a></li>
-            <li><a href="Portriat.php" class="style-item">Portriat</a></li>
+            <li><a href="Portriat.php" class="style-item">Portrait</a></li>
         </ul>
     </div>
 
