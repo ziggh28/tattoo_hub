@@ -216,7 +216,6 @@
                 <li><a href="contact.php"><i class="fas fa-headset"></i> Customer Support</a></li>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="sign_up_page.php"><i class="fas fa-user-plus"></i> Sign Up</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
                 <li><a href="logout.php">Log Out</a>
             </ul>
         </div>

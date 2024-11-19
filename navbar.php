@@ -214,7 +214,6 @@
                 <li><a href="contact.php"><i class="fas fa-headset"></i> Customer Support</a></li>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="sign_up_page.php"><i class="fas fa-user-plus"></i> Sign Up</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
                 <li><a href="logout.php">Log Out</a>
             </ul>
         </div>
@@ -234,13 +233,13 @@
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
             <li><a href="Anime-Gallery.php" class="style-item">Anime</a></li>
-            <li><a href="3d-tattoo-gallery.php" class="style-item">Asian</a></li>
+            <li><a href="asian.php" class="style-item">Asian</a></li>
             <li><a href="realism-gallery.php" class="style-item">Realism</a></li>
             <li><a href="Traditional-Gallery.php" class="style-item">Traditional</a></li>
             <li><a href="neo-tradional-Gallery.php" class="style-item">Neo-Traditional</a></li>
             <li><a href="BlackandGrey-Gallery.php" class="style-item">Black and Grey</a></li>
             <li><a href="Bio-Mechanical.php" class="style-item">Bio-Mechanical</a></li>
-            <li><a href="Portriat.php" class="style-item">Portrait</a></li>
+            <li><a href="Portrait.php" class="style-item">Portrait</a></li>
         </ul>
     </div>
 
