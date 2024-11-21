@@ -14,7 +14,7 @@ include("connection.php");
     <header>
         <h1 id="message">Sign up for Tattoo Hub</h1>
     </header>
-            <form action="sign_up_client_action.php" method="POST">
+            <form action="sign_up_action.php" method="POST">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" required>
 

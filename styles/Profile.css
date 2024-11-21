@@ -129,6 +129,10 @@ body {
     background-color: #2563eb;
 }
 
+#contact {
+    background-color: darkslategray;
+}
+
 .review {
     background-color: #f3f4f6;
     padding: 1rem;
@@ -157,10 +161,10 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: black;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid  rgb(98, 83, 83);
     width: 80%;
     max-width: 500px;
     border-radius: 0.5rem;

@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
     }
     else
         echo '<script>
-                window.location.href="login_page.php";
+                window.location.href="login.php";
                 alert("Invalid username/email or password! Please try again.");
             </script>'; 
 }
