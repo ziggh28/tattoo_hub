@@ -67,6 +67,19 @@ body {
     flex-direction: column;
 }
 
+.sidebar2 {
+    top: 250px;
+    right: 0px;
+    width: 500px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
 .gallery-section h2,
 .sidebar h2 {
     font-size: 1.5rem;
@@ -200,6 +213,120 @@ body {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+form button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2563eb;
+}
+
+.comment-section {
+    margin-top: 2rem;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-list li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+/* Styling star ratings */
+.star-ratings {
+    max-width: 480px;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    text-align: center;
+}
+
+.rating {
+    border: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    content: "\f005";
+    font-family: FontAwesome;
+    margin: 5px;
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rating > label{
+    color: #ddd;
+    cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label{
+    color: yellow;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+    color: gold;
+}
+
+#rating-value {
+    width: 110px;
+    margin: 40px auto 0;
+    padding: 10px 5px;
+    text-align: center;
+    box-shadow: inset 0 0 2px 1px rgba(46, 204, 113, .2);
+}
+
+
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+>>>>>>> 233cc4f6a41246e40276a16be23e5c8c46ccd7c8
 @media (min-width: 768px) {
     .content {
         flex-direction: row;

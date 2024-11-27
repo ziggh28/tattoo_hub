@@ -22,10 +22,12 @@
 
         .navbar {
             position: fixed;
+            z-index: 9999;
             width: 100%;
             background-color: #333;
             color: #fff;
             padding: 1rem;
+            margin-bottom: 20px;
         }
 
         .navbar-container {
@@ -227,21 +229,7 @@
 </head>
 <body>
 
-    <!-- Sidebar Functionality -->
-    <div class="sidebar">
-        <h2>Style Categories</h2>
-        <div id="recommendationContainer" class="recommendation-container"></div>
-        <ul class="style-list" id="styleList">
-            <li><a href="Anime-Gallery.php" class="style-item">Anime</a></li>
-            <li><a href="asian.php" class="style-item">Asian</a></li>
-            <li><a href="realism-gallery.php" class="style-item">Realism</a></li>
-            <li><a href="Traditional-Gallery.php" class="style-item">Traditional</a></li>
-            <li><a href="neo-tradional-Gallery.php" class="style-item">Neo-Traditional</a></li>
-            <li><a href="BlackandGrey-Gallery.php" class="style-item">Black and Grey</a></li>
-            <li><a href="Bio-Mechanical.php" class="style-item">Bio-Mechanical</a></li>
-            <li><a href="Portrait.php" class="style-item">Portrait</a></li>
-        </ul>
-    </div>
+
 
     <!-- JavaScript for Search Functionality -->
     <script>
