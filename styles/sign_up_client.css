@@ -1,117 +1,99 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    /*position: fixed;*/
+    /*top: 60px; /* Adjust based on the height of your navbar */
+    /*left: 270px; /* Adjust based on the width of your sidebar */
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
 }
 
-.sign-up-container {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
-
-header {
+#message {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  color: #333;
-  margin: 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  color: #555;
-}
-
-input {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.password-container {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.password-input-container {
-  position: relative;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #888;
-}
-
-.password-strength {
-  margin-top: 0.5rem;
-}
-
-.strength-bar {
-  height: 5px;
-  background-color: #e0e0e0;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.strength-bar-fill {
-  height: 100%;
-  width: 0;
-  transition: width 0.3s ease, background-color 0.3s ease;
-}
-
-.strength-text {
-  display: block;
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 #login_link {
-  display: block;
+  float: right;
+}
+
+.content {
+    max-width: 1200px; /* Adjust as needed */
+    width: 100%;
+    margin: 0 auto;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+  margin: 15px;
+  padding: 15px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
   text-align: center;
-  margin-top: 1rem;
-  color: #007bff;
-  text-decoration: none;
+  margin: 24px 0 12px 0;
 }
 
-#login_link:hover {
-  text-decoration: underline;
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
 }
 
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+span.signup {
+  padding-top: 16px;
+  padding-right: 16px;
+  float: right;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}

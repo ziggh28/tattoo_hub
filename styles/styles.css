@@ -1,72 +1,375 @@
-/* Add these new rules at the end of the file */
+/* styles.css */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure navbar stays on top */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.content-wrapper {
-    padding-top: 60px; /* Adjust based on navbar height */
+.home-page {
+    text-align: center;
+    padding: 100px 20px 20px; /* Adjusted padding to account for fixed navbar */
+}
+
+.header {
+    align-self: center;
+    background-color: #f8f8f8;
+    padding: 50px 10px;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: 0 0 20px;
+    font-size: 2.5em;
+}
+
+.search-bar {
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2em;
+}
+
+.featured-artists {
+    margin-top: 40px;
+}
+
+.featured-artists h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.artist-list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#map {
-    height: 400px;
-    width: 100%;
+.artist-card {
+    background-color: #fff;
+    border: 1px solid #eee;
     border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.artist-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.artist-card p {
+    color: #777;
+    font-size: 1em;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px; /* Adjust based on the height of your navbar */
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.style-search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.style-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.style-list li {
+    margin-bottom: 10px;
+}
+
+.style-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.style-list a:hover {
+    color: #ff6347; /* Highlight color */
+}
+
+.home-page {
+    margin-left: 270px; /* Adjust to match sidebar width */
+    padding: 100px 20px 20px;
 }
 
 @media (max-width: 768px) {
-    .home-page {
-        margin-left: 220px;
-        padding-top: 100px; /* Adjust for smaller screens */
+    .sidebar {
+        width: 200px;
     }
 
-    .map-container {
-        margin-top: 40px;
+    .home-page {
+        margin-left: 220px;
     }
 }
 
 @media (max-width: 480px) {
+    .sidebar {
+        width: 150px;
+    }
+
     .home-page {
         margin-left: 170px;
-        padding-top: 80px; /* Further adjust for mobile screens */
-    }
-
-    .map-container {
-        margin-top: 30px;
     }
 }
 
-.view-profile-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #808080; /* Grey background */
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.view-profile-btn:hover {
-    background-color: #FFA500; /* Orange background on hover */
-}
-
-
-.artist-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.artist-gallery {
+    margin-top: 40px;
     text-align: center;
 }
 
-.artist-card h3 {
-    margin-bottom: 5px;
+.artist-gallery h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-.artist-card p {
+.artist-work {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.artist-work img {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artist-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.artist-info h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.artist-info p {
+    font-size: 1.2em;
     margin-bottom: 10px;
 }
+
+.artist-info a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.artist-info a:hover {
+    text-decoration: underline;
+}
+
+.gallery-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.artist-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: inline-block;
+    text-align: center;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.artist-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.artist-card h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.artist-card h3 a:hover {
+    color: #ff6347;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    margin-left: 270px; /* Adjust to match sidebar width */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.artist-gallery {
+    flex: 3;
+}
+
+.artist-gallery h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.artist-work {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.artist-work img {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artist-info {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.artist-info h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.artist-info p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.artist-info a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.artist-info a:hover {
+    text-decoration: underline;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #ff6347;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #signin-status {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.g-signin2 {
+    display: inline-block;
+}
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

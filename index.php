@@ -29,33 +29,28 @@
             <div class="artist-list">
                 <div class="artist-card">
                     <img src="Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3>Mike Boissoneault</h3>
+                    <h3><a href="Mike-Boissoneault-Profile.php">Mike Boissoneault</a></h3>
                     <p>Asian</p>
-                    <a href="Mike-Boissoneault-Profile.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3>Bill Le</h3>
+                    <h3><a href="Bill-Le-Profile.php">Bill Le</a></h3>
                     <p>Realism, Asian, Anime</p>
-                    <a href="Bill-Le-Profile.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Damon Butler/Demon Profile.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Damon Butler</h3>
+                    <h3><a href="Damon_Butler.php">Damon Butler</a></h3>
                     <p>FineLine, Black and Grey, Neo-Traditional, Traditional</p>
-                    <a href="Damon_Butler.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Jimmy Johnson/JimmyJohnson_profile.png" alt="Artist Three" class="artist-image">
-                    <h3>Jimmy Johnson</h3>
+                    <h3><a href="Jimmy_Johnson.php">Jimmy Johnson</a></h3>
                     <p>Portrait, Fine-Line, Black and Grey</p>
-                    <a href="Jimmy_Johnson.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Vinny Nguyen</h3>
+                    <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
                     <p>Asian, Realism, BioMechanical</p>
-                    <a href="VinnyNguyen.php" class="view-profile-btn">View Profile</a>
                 </div>
             </div>
         </section>

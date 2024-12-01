@@ -24,7 +24,7 @@
         <div id="galleryContainer" class="gallery-container">
              <div class="artist-card">
                 <img src="Jimmy Johnson\JimmyJohnson_profile.png" alt="Artist Three" class="artist-image">
-                <h3><a href="Jimmy_Johnson.php">Jimmy Johnson</a></h3>
+                <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
             </div>
         </div>
     </div>

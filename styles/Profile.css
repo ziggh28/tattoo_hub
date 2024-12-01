@@ -137,24 +137,8 @@ body {
     background-color: #2563eb;
 }
 
-<<<<<<< HEAD
 .reviews-section {
     margin-top: 2rem;
-=======
-#contact {
-    background-color: darkslategray;
-}
-
-.review {
-    background-color: #f3f4f6;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.review h3 {
-    margin-top: 0;
->>>>>>> dd97adac89383f81d5f24e4f2920d2fdcabcd4e4
 }
 
 .rating {
@@ -207,10 +191,10 @@ body {
 }
 
 .modal-content {
-    background-color: black;
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid  rgb(98, 83, 83);
+    border: 1px solid #888;
     width: 80%;
     max-width: 500px;
 }
