@@ -22,7 +22,7 @@
     <div class="home-page">
         <header class="header">
             <h1>Find the best tattoo artists in New England</h1>
-            <input type="text" placeholder="Search by location or style" class="search-bar">
+                <iframe width="1000" height="400" frameborder="0" src="https://widgets.scribblemaps.com/sm/?d&dv&z&l&gc&af&mc&svc&ssvce&lat=42.292286486&lng=-71.240464759&vz=9&type=road&ti&s&width=1000&height=400&id=TattooHub" style="border:0; max-width: 100%;" allowfullscreen allow="geolocation" loading="lazy"></iframe>
         </header>
         <section class="featured-artists">
             <h2>Featured Artists</h2>
