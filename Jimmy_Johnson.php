@@ -28,14 +28,13 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar_basic.php')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
     </navbar>
-    <br><br><br><br>
 <body>
     <div class="container">
         <header class="profile-header">
@@ -76,7 +75,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar2">
+            <div class="sidebar">
                 <section class="location-section">
                     <h2>Location</h2>
                     <div class="map-container">
@@ -131,7 +130,7 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
-                                    $table = "jimmy_comment_section";
+                                    $table = "mike_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{

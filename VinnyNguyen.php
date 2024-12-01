@@ -28,19 +28,18 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar_basic.php')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
     </navbar>
-    <br><br><br><br>
 <body>
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
-                <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Mike Boissoneault profile picture">
+                <img src="Vinny Nguyen\vinny-nguyen Profile.jpg" alt="Mike Boissoneault profile picture">
             </div>
             <div class="profile-info">
                 <h1>Vinny Nguyen</h1>
@@ -64,19 +63,19 @@
                 <section class="gallery-section">
                     <h2>Gallery</h2>
                     <div class="gallery-grid">
-                        <img src="\Vinny Nguyen\314463296_442914361361278_683924768596635008_nlow.jpg">
-                        <img src="\Vinny Nguyen\318766405_844483826604384_2686668458174030971_nlow.jpg">
-                        <img src="\Vinny Nguyen\401104434_3196081907362904_8095963639376388821_nlow.jpg">
-                        <img src="\Vinny Nguyen\408715102_895784478828504_8238305353560090770_nlow.jpg">
-                        <img src="\Vinny Nguyen\409203911_389421816773673_7852508200130417389_nlow.jpg">
-                        <img src="\Vinny Nguyen\411398812_772099184749536_661807829600162596_nlow.jpg">
-                        <img src="\Vinny Nguyen\420583404_7095009947280497_1847041223343543559_nlow.jpg">
-                        <img src="\Vinny Nguyen\434124532_310897638368852_2304062574585429515_nlow.jpg">
-                        <img src="\Vinny Nguyen\441468864_726340936090643_1787004723858267777_nlow.jpg">
+                        <img src="Vinny Nguyen\314463296_442914361361278_683924768596635008_nlow.jpg">
+                        <img src="Vinny Nguyen\318766405_844483826604384_2686668458174030971_nlow.jpg">
+                        <img src="Vinny Nguyen\401104434_3196081907362904_8095963639376388821_nlow.jpg">
+                        <img src="Vinny Nguyen\408715102_895784478828504_8238305353560090770_nlow.jpg">
+                        <img src="Vinny Nguyen\409203911_389421816773673_7852508200130417389_nlow.jpg">
+                        <img src="Vinny Nguyen\411398812_772099184749536_661807829600162596_nlow.jpg">
+                        <img src="Vinny Nguyen\420583404_7095009947280497_1847041223343543559_nlow.jpg">
+                        <img src="Vinny Nguyen\434124532_310897638368852_2304062574585429515_nlow.jpg">
+                        <img src="Vinny Nguyen\441468864_726340936090643_1787004723858267777_nlow.jpg">
                     </div>
                 </section>
             </div>
-            <div class="sidebar2">
+            <div class="sidebar">
                 <section class="location-section">
                     <h2>Location</h2>
                     <div class="map-container">
@@ -131,7 +130,7 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
-                                    $table = "vinny_comment_section";
+                                    $table = "mike_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{

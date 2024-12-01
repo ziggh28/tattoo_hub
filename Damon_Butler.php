@@ -11,7 +11,7 @@
     <title>Damon Butler Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
     <script src="functions/Profile.js" defer></script>
-    <script type="text/javascript">
+    <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script type="text/javascript">
@@ -28,14 +28,13 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar_basic.php')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
     </navbar>
-    <br><br><br><br>
 <body>
     <div class="container">
         <header class="profile-header">
@@ -64,7 +63,7 @@
                 <section class="gallery-section">
                     <h2>Gallery</h2>
                     <div class="gallery-grid">
-                        <img src="Damon Butler\damon-butler-1.jpg">
+                        <img src="damon-butler-1.jpg">
                         <img src="Damon Butler\damon-butler-2.jpg">
                         <img src="Damon Butler\damon-butler-3.jpg">
                         <img src="Damon Butler\damon-butler-4.jpg">
@@ -76,7 +75,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar2">
+            <div class="sidebar">
                 <section class="location-section">
                     <h2>Location</h2>
                     <div class="map-container">
@@ -131,7 +130,7 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
-                                    $table = "damon_comment_section";
+                                    $table = "mike_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{

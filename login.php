@@ -33,7 +33,7 @@
     </div>
     <script>
         // Load the navbar
-        fetch('navbar_basic.php')
+        fetch('navbar.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
