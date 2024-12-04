@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mike Boissoneault Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
+    <link rel="stylesheet" href="styles/review.css">
     <script src="functions/Profile.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -24,19 +25,19 @@
 <script src="scripts.js"></script>
 </head>
 <body>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <navbar>
     <div id="navbar-placeholder"></div>
-    <script>    
-        fetch('navbar_basic.php')
+    <script>
+        fetch('navbar-basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
-    </navbar>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <body>
+
     <div class="container">
         <header class="profile-header">
             <div class="profile-picture">
@@ -128,7 +129,7 @@
                     </div>
                 </div>
                 <div class="reviews-section">
-                    <h2>Reviews</h2>
+                    <h2 class="reviews-section">Reviews</h2>
                     <?php
                                         $table = "mike_comment_section";
                                         if(!isset($_SESSION['name'])){

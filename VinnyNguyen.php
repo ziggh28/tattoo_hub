@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinny Nguyen Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
+    <link rel="stylesheet" href="styles/review.css">
+    <link rel="stylesheet" href="styles/booking.css">
     <script src="functions/Profile.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -28,7 +30,7 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar_basic.php')
+        fetch('navbar-basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -127,7 +129,8 @@
                     </div>
                     
                 </div>
-                <h2>Reviews</h2>
+                <div class="reviews-section">
+                <h2 class="reviews-section">Reviews</h2>
                 <?php
                                     $table = "vinny_comment_section";
                                     if(!isset($_SESSION['name'])){

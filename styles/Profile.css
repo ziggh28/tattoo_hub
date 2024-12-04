@@ -1,169 +1,119 @@
-/* styles/bill-le-profile.css */
+:root {
+    --primary-color: #e8491d;
+    --secondary-color: #35424a;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 20px;
 }
 
 .profile-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
-}
-
-.profile-picture {
-    width: 16rem;
-    height: 16rem;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
 }
 
 .profile-picture img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-.profile-info {
-    text-align: center;
+    margin-right: 30px;
 }
 
 .profile-info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.contact-info {
-    background-color: #f3f4f6;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 .contact-info a {
-    color: #3b82f6;
+    color: var(--primary-color);
     text-decoration: none;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    margin-bottom: 5px;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.contact-info a i {
+    margin-right: 10px;
 }
 
 .content {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-.gallery-section h2,
-.sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.main-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 250px;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .gallery-grid img {
     width: 100%;
     height: 200px;
-    border-radius: 0.5rem;
     object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
 }
 
 .map-container {
-    z-index: -1;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    border-radius: 8px;
 }
 
 .book-me-btn {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
+    display: block;
     width: 100%;
-    max-width: 16rem;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .book-me-btn:hover {
-    background-color: #2563eb;
-}
-
-.reviews-section {
-    margin-top: 2rem;
-}
-
-.rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-}
-
-.rating > input {
-    display: none;
-}
-
-.rating > label {
-    border: 1px;
-    position: relative;
-    width: 1.1em;
-    font-size: 1.5rem;
-    color: #FFD700;
-    cursor: pointer;
-}
-
-.rating > label::before {
-    content: "\2605";
-    position: absolute;
-    opacity: 0;
-}
-
-.rating > label:hover:before,
-.rating > label:hover ~ label:before {
-    opacity: 1 !important;
-}
-
-.rating > input:checked ~ label:before {
-    opacity: 1;
-}
-
-.rating:hover > input:checked ~ label:before {
-    opacity: 0.4;
+    background-color: #d13d15;
 }
 
 .modal {
@@ -179,12 +129,13 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--white);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
+    border-radius: 8px;
 }
 
 .close {
@@ -192,140 +143,29 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input,
-form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-}
-
-form button {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #2563eb;
-}
-
-.comment-section {
-    margin-top: 2rem;
-}
-
-.comment-list {
-    list-style: none;
-    padding: 0;
-}
-
-.comment-list li {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-}
-
-/* Styling star ratings */
-.star-ratings {
-    max-width: 480px;
-    margin: auto;
-    padding: 15px;
-    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
-    text-align: center;
-}
-
-.rating {
-    border: none;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-}
-
-.rating > input {
-    display: none;
-}
-
-.rating > label:before {
-    content: "\f005";
-    font-family: FontAwesome;
-    margin: 5px;
-    font-size: 1.5rem;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.rating > label{
-    color: #ddd;
-    cursor: pointer;
-}
-
-.rating > input:checked ~ label,
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label{
-    color: yellow;
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
-    color: gold;
-}
-
-#rating-value {
-    width: 110px;
-    margin: 40px auto 0;
-    padding: 10px 5px;
-    text-align: center;
-    box-shadow: inset 0 0 2px 1px rgba(46, 204, 113, .2);
-}
-
-
-
 @media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
     }
-}
 
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .profile-picture img {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
-}
 
-=======
->>>>>>> a9365cfed4c7b22d2c29929bda9573f4105f0479
-@media (min-width: 768px) {
     .content {
-        flex-direction: row;
-    }
-
-    .main-content {
-        flex: 2;
-        margin-right: 2rem;
-    }
-
-    .sidebar {
-        flex: 1;
+        flex-direction: column;
     }
 }
+

@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damon Butler Profile</title>
     <link rel="stylesheet" href="styles/Profile.css">
+    <link rel="stylesheet" href="styles/review.css">
     <script src="functions/Profile.js" defer></script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -28,7 +29,7 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar_basic.php')
+        fetch('navbar-basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -127,8 +128,9 @@
                     </div>
                     
                 </div>
-                <h2>Reviews</h2>
-                <?php
+                <div class="reviews-section">
+                <h2 class="reviews-section">Reviews</h2>
+                |<?php
                                     $table = "damon_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
@@ -148,15 +150,14 @@
                                             <label for='star2' class='full'></label>
                                             <input type='radio' id='star1' name='ratings' value='1'>
                                             <label for='star1' class='full'></label>
-                                        </fieldset>    
-                                        <br><br>  
+                                        </fieldset>      
+                                        <br><br>
                                         <textarea name='message' placeholder='Write your comment here'></textarea>
                                         <button type='submit' name='commentSubmit'>Add Comment</button>
                                         </form>";
                                     }
                                     getComments($table);
                                 ?>    
-            </div>
         </div>
     </body>
         <footer>

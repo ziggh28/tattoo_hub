@@ -1,99 +1,165 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    /*position: fixed;*/
-    /*top: 60px; /* Adjust based on the height of your navbar */
-    /*left: 270px; /* Adjust based on the width of your sidebar */
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --text-color: #111827;
+  --text-muted: #6b7280;
+  --background-color: #f3f4f6;
+  --input-border: #d1d5db;
+  --input-focus: #3b82f6;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
 }
 
-#message {
-  text-align: center;
-}
-
-#login_link {
-  float: right;
-}
-
-.content {
-    max-width: 1200px; /* Adjust as needed */
-    width: 100%;
-    margin: 0 auto;
-}
-
-form {
-  border: 3px solid #f1f1f1;
-  margin: 15px;
-  padding: 15px;
-}
-
-input[type=text], input[type=password], input[type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.signup-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
   width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: var(--primary-hover);
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
+#login_link {
   text-align: center;
-  margin: 24px 0 12px 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  text-decoration: none;
+  display: block;
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+#login_link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
-.container {
-  padding: 16px;
+.password-input-wrapper {
+  position: relative;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
 }
 
-span.signup {
-  padding-top: 16px;
-  padding-right: 16px;
-  float: right;
+.password-toggle:hover {
+  color: var(--text-color);
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
+.password-strength {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.strength-meter {
+  height: 4px;
+  background-color: var(--input-border);
+  margin-top: 0.25rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-meter-fill {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.weak { background-color: var(--error-color); }
+.medium { background-color: var(--warning-color); }
+.strong { background-color: var(--success-color); }
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 2rem;
   }
-  .cancelbtn {
-     width: 100%;
-  }
 }
+

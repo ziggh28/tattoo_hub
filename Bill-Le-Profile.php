@@ -11,10 +11,12 @@
     <title>Bill Le Profile - Tattoo Hub</title>
     <link rel="stylesheet" href="styles/Profile.css">
     <link rel="stylesheet" href="styles/comment_section.css">
+    <link rel="stylesheet" href="styles/review.css">
 
     <script src="scripts/comment.js"></script>
     <link rel="stylesheet" href="styles/book_me_button.css">
-    <script src="scripts/book_me_button.js"></script>
+    <script src="functions/book_me_button.js"></script>
+    <script src="functions/star_rating.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="scripts.js" defer></script>
     <script type="text/javascript"
@@ -31,7 +33,7 @@
 <nav>
     <div id="nav-placeholder"></div>
     <script>
-        fetch('navbar_basic.php')
+        fetch('navbar-basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
@@ -92,36 +94,34 @@
         </div>
         </div>
                 </section>
-                    <h2>Reviews</h2>
-                    <?php
-                                    $table = "bill_comment_section";
-                                    if(!isset($_SESSION['name'])){
-                                        echo "Please make an account or sign in to submit reviews.";
-                                    } else{
-                                        echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment and 1-5 star rating about your experience!
-                                        <form id='comment-form' method='POST' action='".setComments($table)."'>
-                                        <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
-                                        <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
-                                        <fieldset class='rating'>
-                                            <input type='radio' id='star5' name='ratings' value='5'>
-                                            <label for='star5' class='full'></label>
-                                            <input type='radio' id='star4' name='ratings' value='4'>
-                                            <label for='star4' class='full'></label>
-                                            <input type='radio' id='star3' name='ratings' value='3'>
-                                            <label for='star3' class='full'></label>
-                                            <input type='radio' id='star2' name='ratings' value='2'>
-                                            <label for='star2' class='full'></label>
-                                            <input type='radio' id='star1' name='ratings' value='1'>
-                                            <label for='star1' class='full'></label>
-                                        </fieldset>   
-                                        <br><br>
-                                        <textarea name='message' placeholder='Write your comment here'></textarea>
-                                        <button type='submit' name='commentSubmit'>Add Comment</button>
-                                        </form>";
-                                    }
-                                    getComments($table);
-                                ?>
-    </div>
+                <div class="reviews-section">
+            <h2>Reviews</h2>
+            <?php
+            if(!isset($_SESSION['name'])){
+                echo "<p>Please make an account or sign in to submit reviews.</p>";
+            } else {
+                ?>
+                <form id="comment-form" method="POST" action="<?php echo setComments($table); ?>">
+                    <input type="hidden" id="id" name="id" value="<?php echo $_SESSION['name']; ?>">
+                    <input type="hidden" id="date" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
+                    <p>Hello <?php echo $_SESSION['name']; ?>! Feel free to leave a comment and 1-5 star rating about your experience!</p>
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="ratings" value="5"><label for="star5" title="5 stars"></label>
+                        <input type="radio" id="star4" name="ratings" value="4"><label for="star4" title="4 stars"></label>
+                        <input type="radio" id="star3" name="ratings" value="3"><label for="star3" title="3 stars"></label>
+                        <input type="radio" id="star2" name="ratings" value="2"><label for="star2" title="2 stars"></label>
+                        <input type="radio" id="star1" name="ratings" value="1"><label for="star1" title="1 star"></label>
+                    </fieldset>   
+                    <textarea name="message" placeholder="Write your comment here"></textarea>
+                    <button type="submit" name="commentSubmit">Add Comment</button>
+                </form>
+            <?php
+            }
+            getComments($table);
+            ?>
+        </div>
+
+    <div class="booking-section">
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
