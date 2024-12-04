@@ -119,17 +119,37 @@
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Make an Appointment</h2>
-            <form id="bookingForm">
-                <input type="text" id="name" placeholder="Your name" required>
-                <input type="email" id="email" placeholder="Your email" required>
-                <input type="tel" id="phone" placeholder="Your phone number" required>
-                <input type="text" id="subject" placeholder="Request booking/question" required>
-                <input type="date" id="appointment-date" required>
-                <input type="time" id="appointment-time" required>
-                <textarea id="message" placeholder="Describe your tattoo idea" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <form>
+                        <section id="contact" class="container">
+                            <div style="text-align:center">
+                              <h2>Make an Appointment</h2>
+                              <p>Make an appointment with this artist or ask any questions</p>
+                            </div>
+                              <div class="column">
+                                <form action="/action_page.php">
+                                <div class="form-group">
+                                  <label for="name">Your Name</label>
+                                  <input type="text" id="name" name="name" placeholder="Your name.." required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">Your email</label>
+                                  <input type="text" id="email" name="email" placeholder="Your email" required>
+                                </div>
+                                <div class="form-group"></div>
+                                  <label for="pnumber">Phone Number</label>
+                                  <input type="text" id="pnumber" name="pnumber" placeholder="Your phone number" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="subject">Booking or Question</label>
+                                  <input type="text" id="subject" name="subject" placeholder="request booking/question" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="message">Time/Date of appointment and what would you like done</label>
+                                  <textarea id="message" name="message" placeholder="Time/date and Idea" style="height:170px" required></textarea>
+                                </div> 
+                                  <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
+                        </section>
+                </form>
         </div>
     </div>
 

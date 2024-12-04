@@ -87,7 +87,6 @@
                     <div id="bookingModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
-                            <h2>Make an Appointment</h2>
                     <form>
                         <section id="contact" class="container">
                             <div style="text-align:center">
