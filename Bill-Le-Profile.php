@@ -26,7 +26,7 @@
 <nav>
     <div id="nav-placeholder"></div>
     <script>
-        fetch('navbar.php')
+        fetch('navbar_basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;

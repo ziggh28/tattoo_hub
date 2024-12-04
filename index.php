@@ -40,17 +40,17 @@
                 <div class="artist-card">
                     <img src="Damon Butler/Demon Profile.jpg" alt="Artist Three" class="artist-image">
                     <h3><a href="Damon_Butler.php">Damon Butler</a></h3>
-                    <p>FineLine, Black and Grey, Neo-Traditional, Traditional</p>
+                    <p>Line Work, Black and Grey, Neo-Traditional, Traditional</p>
                 </div>
                 <div class="artist-card">
                     <img src="Jimmy Johnson/JimmyJohnson_profile.png" alt="Artist Three" class="artist-image">
                     <h3><a href="Jimmy_Johnson.php">Jimmy Johnson</a></h3>
-                    <p>Portrait, Fine-Line, Black and Grey</p>
+                    <p>Portrait, Line Work, Black and Grey</p>
                 </div>
                 <div class="artist-card">
                     <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
                     <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
-                    <p>Asian, Realism, BioMechanical</p>
+                    <p>Asian, Realism, Bio-Mechanical</p>
                 </div>
             </div>
         </section>

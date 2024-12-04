@@ -28,7 +28,7 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar.php')
+        fetch('navbar_basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -130,7 +130,7 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
-                                    $table = "mike_comment_section";
+                                    $table = "jimmy_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{

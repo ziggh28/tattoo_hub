@@ -28,7 +28,7 @@
     <navbar>
     <div id="navbar-placeholder"></div>
     <script>    
-        fetch('navbar.php')
+        fetch('navbar_basic.php')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -63,7 +63,7 @@
                 <section class="gallery-section">
                     <h2>Gallery</h2>
                     <div class="gallery-grid">
-                        <img src="damon-butler-1.jpg">
+                        <img src="Damon Butler\damon-butler-1.jpg">
                         <img src="Damon Butler\damon-butler-2.jpg">
                         <img src="Damon Butler\damon-butler-3.jpg">
                         <img src="Damon Butler\damon-butler-4.jpg">
@@ -130,7 +130,7 @@
                 </div>
                 <h2>Reviews</h2>
                 <?php
-                                    $table = "mike_comment_section";
+                                    $table = "damon_comment_section";
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{

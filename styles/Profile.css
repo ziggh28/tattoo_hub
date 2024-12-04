@@ -87,10 +87,10 @@ body {
 }
 
 .map-container {
+    z-index: -1;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
-    overflow: hidden;
     margin-bottom: 1rem;
 }
 
