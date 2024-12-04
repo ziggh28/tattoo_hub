@@ -229,8 +229,6 @@ body {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 form {
     display: flex;
     flex-direction: column;
@@ -342,7 +340,6 @@ form button:hover {
     }
 }
 
->>>>>>> 233cc4f6a41246e40276a16be23e5c8c46ccd7c8
 @media (min-width: 768px) {
     .content {
         flex-direction: row;

@@ -10,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill Le Profile - Tattoo Hub</title>
     <link rel="stylesheet" href="styles/Profile.css">
+    <link rel="stylesheet" href="styles/comment_section.css">
+
+    <script src="scripts/comment.js"></script>
+    <link rel="stylesheet" href="styles/book_me_button.css">
+    <script src="scripts/book_me_button.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="scripts.js" defer></script>
     <script type="text/javascript"
