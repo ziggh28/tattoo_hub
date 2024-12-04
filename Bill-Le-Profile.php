@@ -37,7 +37,6 @@
                 document.getElementById('nav-placeholder').innerHTML = data;
             });
     </script>
-    <br><br><br><br>
 </nav>
 <body>
     <div class="container">
@@ -79,7 +78,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar2">
+            <div class="sidebar">
                     <h2>Location</h2>
                     <div class="map-container">
                         <iframe
@@ -99,7 +98,7 @@
                                     if(!isset($_SESSION['name'])){
                                         echo "Please make an account or sign in to submit reviews.";
                                     } else{
-                                        echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment about your experience!
+                                        echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment and 1-5 star rating about your experience!
                                         <form id='comment-form' method='POST' action='".setComments($table)."'>
                                         <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
                                         <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
@@ -114,7 +113,8 @@
                                             <label for='star2' class='full'></label>
                                             <input type='radio' id='star1' name='ratings' value='1'>
                                             <label for='star1' class='full'></label>
-                                        </fieldset>      
+                                        </fieldset>   
+                                        <br><br>
                                         <textarea name='message' placeholder='Write your comment here'></textarea>
                                         <button type='submit' name='commentSubmit'>Add Comment</button>
                                         </form>";
@@ -125,17 +125,37 @@
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Make an Appointment</h2>
-            <form id="bookingForm">
-                <input type="text" id="name" placeholder="Your name" required>
-                <input type="email" id="email" placeholder="Your email" required>
-                <input type="tel" id="phone" placeholder="Your phone number" required>
-                <input type="text" id="subject" placeholder="Request booking/question" required>
-                <input type="date" id="appointment-date" required>
-                <input type="time" id="appointment-time" required>
-                <textarea id="message" placeholder="Describe your tattoo idea" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <form>
+                        <section id="contact" class="container">
+                            <div style="text-align:center">
+                              <h2>Make an Appointment</h2>
+                              <p>Make an appointment with this artist or ask any questions</p>
+                            </div>
+                              <div class="column">
+                                <form action="/action_page.php">
+                                <div class="form-group">
+                                  <label for="name">Your Name</label>
+                                  <input type="text" id="name" name="name" placeholder="Your name.." required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">Your email</label>
+                                  <input type="text" id="email" name="email" placeholder="Your email" required>
+                                </div>
+                                <div class="form-group"></div>
+                                  <label for="pnumber">Phone Number</label>
+                                  <input type="text" id="pnumber" name="pnumber" placeholder="Your phone number" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="subject">Booking or Question</label>
+                                  <input type="text" id="subject" name="subject" placeholder="request booking/question" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="message">Time/Date of appointment and what would you like done</label>
+                                  <textarea id="message" name="message" placeholder="Time/date and Idea" style="height:170px" required></textarea>
+                                </div> 
+                                  <button type="button event.preventDefault();" onclick="sendMail()">Send</button>
+                        </section>
+                </form>
         </div>
     </div>
 

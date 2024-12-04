@@ -25,17 +25,17 @@
         }
 
         .footer-section {
-            z-index: 9999;
+            z-index: 999999;
             display: flex;
             align-items: center;
         }
 
         .footer-section p {
-            z-index: 9999;
             margin: 0 0.5rem 0 0;
         }
 
         .social-icons {
+            z-index: 999999;
             display: flex;
             gap: 0.5rem;
         }
@@ -51,7 +51,6 @@
         }
 
         .footer-bottom {
-            z-index: 9999;
             font-size: 0.6rem;
             color: #ccc;
             text-align: center;

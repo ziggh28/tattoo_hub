@@ -36,7 +36,6 @@
             });
     </script>
     </navbar>
-    <br><br><br><br>
 <body>
     <div class="container">
         <header class="profile-header">
@@ -77,7 +76,7 @@
                     </div>
                 </section>
             </div>
-            <div class="sidebar2">
+            <div class="sidebar">
                 <section class="location-section">
                     <h2>Location</h2>
                     <div class="map-container">
@@ -89,7 +88,6 @@
                     <div id="bookingModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
-                            <h2>Make an Appointment</h2>
                     <form>
                         <section id="contact" class="container">
                             <div style="text-align:center">
@@ -136,7 +134,7 @@
                                         if(!isset($_SESSION['name'])){
                                             echo "Please make an account or sign in to submit reviews.";
                                         } else{
-                                            echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment about your experience!
+                                            echo "Hello ".$_SESSION['name'] ."! Feel free to leave a comment and 1-5 star rating about your experience!
                                             <form id='comment-form' method='POST' action='".setComments($table)."'>
                                             <input type='hidden' id='id' name='id' value='". $_SESSION['name']."'>
                                             <input type='hidden' id='date' name='date' value='". date('Y-m-d H:i:s')."'>
@@ -151,7 +149,8 @@
                                                 <label for='star2' class='full'></label>
                                                 <input type='radio' id='star1' name='ratings' value='1'>
                                                 <label for='star1' class='full'></label>
-                                            </fieldset>      
+                                            </fieldset>    
+                                            <br><br>  
                                             <textarea name='message' placeholder='Write your comment here'></textarea>
                                             <button type='submit' name='commentSubmit'>Add Comment</button>
                                             </form>";

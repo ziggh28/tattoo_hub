@@ -22,40 +22,35 @@
     <div class="home-page">
         <header class="header">
             <h1>Find the best tattoo artists in New England</h1>
-            <input type="text" placeholder="Search by location or style" class="search-bar">
+                <iframe width="1000" height="400" frameborder="0" src="https://widgets.scribblemaps.com/sm/?d&dv&z&l&gc&af&mc&svc&ssvce&lat=42.292286486&lng=-71.240464759&vz=9&type=road&ti&s&width=1000&height=400&id=TattooHub" style="border:0; max-width: 100%;" allowfullscreen allow="geolocation" loading="lazy"></iframe>
         </header>
         <section class="featured-artists">
             <h2>Featured Artists</h2>
             <div class="artist-list">
                 <div class="artist-card">
                     <img src="Mike B\resizedportpic.jpg" alt="Artist Two" class="artist-image">
-                    <h3>Mike Boissoneault</h3>
+                    <h3><a href="Mike-Boissoneault-Profile.php">Mike Boissoneault</a></h3>
                     <p>Asian</p>
-                    <a href="Mike-Boissoneault-Profile.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Bill Le\Profile.jpg" alt="Artist Two" class="artist-image">
-                    <h3>Bill Le</h3>
+                    <h3><a href="Bill-Le-Profile.php">Bill Le</a></h3>
                     <p>Realism, Asian, Anime</p>
-                    <a href="Bill-Le-Profile.php" class="view-profile-btn">View Profile</a>
                 </div>
                 <div class="artist-card">
                     <img src="Damon Butler/Demon Profile.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Damon Butler</h3>
-                    <p>FineLine, Black and Grey, Neo-Traditional, Traditional</p>
-                    <a href="Damon_Butler.php" class="view-profile-btn">View Profile</a>
+                    <h3><a href="Damon_Butler.php">Damon Butler</a></h3>
+                    <p>Line Work, Black and Grey, Neo-Traditional, Traditional</p>
                 </div>
                 <div class="artist-card">
                     <img src="Jimmy Johnson/JimmyJohnson_profile.png" alt="Artist Three" class="artist-image">
-                    <h3>Jimmy Johnson</h3>
-                    <p>Portrait, Fine-Line, Black and Grey</p>
-                    <a href="Jimmy_Johnson.php" class="view-profile-btn">View Profile</a>
+                    <h3><a href="Jimmy_Johnson.php">Jimmy Johnson</a></h3>
+                    <p>Portrait, Line Work, Black and Grey</p>
                 </div>
                 <div class="artist-card">
                     <img src="Vinny Nguyen/vinny-nguyen Profile.jpg" alt="Artist Three" class="artist-image">
-                    <h3>Vinny Nguyen</h3>
-                    <p>Asian, Realism, BioMechanical</p>
-                    <a href="VinnyNguyen.php" class="view-profile-btn">View Profile</a>
+                    <h3><a href="VinnyNguyen.php">Vinny Nguyen</a></h3>
+                    <p>Asian, Realism, Bio-Mechanical</p>
                 </div>
             </div>
         </section>

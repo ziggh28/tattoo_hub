@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asian</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="sidebar.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -214,6 +214,7 @@
                 <li><a href="contact.php"><i class="fas fa-headset"></i> Customer Support</a></li>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="sign_up_page.php"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
                 <li><a href="logout.php">Log Out</a>
             </ul>
         </div>
@@ -227,19 +228,22 @@
 </head>
 <body>
 
-    <!-- Sidebar Functionality -->
+    <!-- Sidebar with Search Functionality -->
     <div class="sidebar">
-        <h2>Style Categories</h2>
+        <h2>Search by Style</h2>
+        <input type="text" id="styleSearch" placeholder="Search styles..." class="style-search-bar">
         <div id="recommendationContainer" class="recommendation-container"></div>
         <ul class="style-list" id="styleList">
-            <li><a href="Anime-Gallery.php" class="style-item">Anime</a></li>
+            <li><a href="anime.php" class="style-item">Anime</a></li>
             <li><a href="asian.php" class="style-item">Asian</a></li>
-            <li><a href="realism-gallery.php" class="style-item">Realism</a></li>
-            <li><a href="Traditional-Gallery.php" class="style-item">Traditional</a></li>
-            <li><a href="neo-tradional-Gallery.php" class="style-item">Neo-Traditional</a></li>
-            <li><a href="BlackandGrey-Gallery.php" class="style-item">Black and Grey</a></li>
-            <li><a href="Bio-Mechanical.php" class="style-item">Bio-Mechanical</a></li>
-            <li><a href="Portrait.php" class="style-item">Portrait</a></li>
+            <li><a href="realism.php" class="style-item">Realism</a></li>
+            <li><a href="traditional.php" class="style-item">Traditional</a></li>
+            <li><a href="neo-traditional.php" class="style-item">Neo-Traditional</a></li>
+            <li><a href="line-work.php" class="style-item">Line Work</a></li>
+            <li><a href="black-and-grey.php" class="style-item">Black and Grey</a></li>
+            <li><a href="bio-mechanical.php" class="style-item">Bio-Mechanical</a></li>
+            <li><a href="portrait.php" class="style-item">Portrait</a></li>
+            
         </ul>
     </div>
 
