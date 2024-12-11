@@ -25,7 +25,7 @@ function getComments($table) {
         echo "rating: ".htmlspecialchars($row['ratings']). "<br>";
         echo "date: ".htmlspecialchars($row['date']). "<br>";
         echo "message: ".htmlspecialchars($row['message']). "<br>";
-        echo "</div><br>";
+        echo "</div> <hr> <br>";
     }
 }
 ?>

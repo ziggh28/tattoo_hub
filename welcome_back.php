@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
       body {
-        background-color: #f8f9fa;
+        background-color: grey;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,7 +30,7 @@
         width: 90%;
       }
       h1 {
-        color: #007bff;
+        color: orange;
         margin-bottom: 1rem;
       }
       .user-name {
@@ -41,7 +41,7 @@
         display: inline-block;
         margin-top: 1rem;
         padding: 0.5rem 1rem;
-        background-color: #007bff;
+        background-color: orange;
         color: #ffffff;
         text-decoration: none;
         border-radius: 5px;
